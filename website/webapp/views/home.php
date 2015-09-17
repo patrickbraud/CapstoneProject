@@ -1,5 +1,5 @@
 <?php
-    $page = new Page("This is my title");
+    $page = new Page("TTU Computer Science Blog");
     $page->showHeader();
 
 
