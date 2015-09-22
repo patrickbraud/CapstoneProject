@@ -15,6 +15,7 @@ class Page {
 
     private $header = "webapp/header.php";
     private $footer = "webapp/footer.php";
+    private $assetDir = "webapp/assets/";
 
 
     private $session;
@@ -37,6 +38,9 @@ class Page {
             $this->crumb_size = 0; //keep up with the size of the array, so we don't have to call count() all the time.
         }
 
+    }
+    public function getAsset($asset) {
+        return $this->path . $this->assetDir . $asset;
     }
     public function getURL(){
         $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";

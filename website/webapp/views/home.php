@@ -1,11 +1,12 @@
 <?php
     $page = new Page("This is my title");
     $page->showHeader();
-?>
 
-<p>Hello World</p>
-<a href="<?php echo $page->link("home", "admin"); ?>">Admin</a>
 
-<?php
+    echo newBlogPost("Blog Post Title", "James Little", "September 9th 1999", "http://placehold.it/900x300", "something something");
+    echo newBlogPost("Blog Post Title", "James Little", "September 9th 1999", "http://placehold.it/900x300", "something something");
+    echo newBlogPost("Blog Post Title", "James Little", "September 9th 1999", "http://placehold.it/900x300", "something something");
+    echo pager();
+
     $page->showFooter();
 ?>
