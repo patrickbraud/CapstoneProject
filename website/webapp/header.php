@@ -66,6 +66,19 @@
         $output = '<h1 class="page-header">'.$title.' <small>'.$secondary.'</small></h1>';
         return $output;
     }
+
+    array(
+        "id" => "this"
+    );
+    /*function makeList($list = array()) { //array(
+        $output = '<div class="list-group">';
+          foreach ($i as array_keys($list)) {
+              $key =
+              $output += '<a href="#" class="list-group-item">'.$title.'</a>';
+          }
+        return $output + '</div>';
+
+    }*/
 ?>
 
 <!-- Page Content -->
