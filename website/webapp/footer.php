@@ -1,5 +1,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
+<!-- Blog Sidebar Widgets Column -->
+
 
 
 <!-- Footer -->
@@ -18,6 +20,7 @@
 
 <!-- jQuery -->
 <script src="<?php echo $this->getAsset("js/jquery.js"); ?>"></script>
+<script src="<?php echo $this->getAsset("js/app.js"); ?>"</script>
 
 <!-- Bootstrap Core JavaScript -->
 
