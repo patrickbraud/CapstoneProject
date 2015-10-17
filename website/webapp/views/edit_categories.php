@@ -2,23 +2,26 @@
 	$page = new Page("Edit Categories Page");
 	$page->showHeader();
 ?>
-<form class="form-horizontal" role="form">
-	<div class="form-group">
-	</div>
 
-	<div class="form-group">
-		<p>Categories edit page</p>
-	</div>
-</form>
 
-<div class="list-group">
-  <button type="button" class="list-group-item">Artificial Intelligence</button>
-  <button type="button" class="list-group-item">Big Data</button>
-  <button type="button" class="list-group-item">Computer Architecture</button>
-  <button type="button" class="list-group-item">Computer Engineering</button>
-  <button type="button" class="list-group-item">Computer Graphics</button>
+	
+ <div class="container col-md-offset-1 col-md-10"<
+ 	<div class="form-group col-md-10">
+	  	<label for="comment">Title:</label>
+	  	<textarea class="form-control" rows="2" id="title"></textarea>
+	</div>
+</div>
+
+<div class="container col-md-offset-1 col-md-2">
+	  	<div class="btn-group col-md-offset-1" role="group"> 
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	</div>
+	<p><br></p>
 </div>
 
 <?php
+	
+	//need to add href to each button into DB categories
 	$page->showFooter();
 ?>
