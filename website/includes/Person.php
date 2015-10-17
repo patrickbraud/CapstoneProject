@@ -53,7 +53,7 @@ class Person extends People{
         return $this->last_name;
     }
     public function points() {
-        return parent::getPoints($this->id);
+        return $this->points;
     }
     public function role() {
         return $this->roleId;

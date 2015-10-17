@@ -13,13 +13,16 @@
     addInclude("constants");
     addInclude("Page");
     addInclude("Database");
+    addInclude("DAO");
     addInclude("People");
     addInclude("Person");
     addInclude("Session");
     addInclude("SessionPerson");
+    addInclude("Categories");
 
     $DB = new Database(DB_HOST, DB_USER, DB_PASS, DB_DB);
     //$People = new People($DB);
     $Person = new Person($DB);
     $Session = new Session();
+    $Categories = new Categories($DB);
 

@@ -12,7 +12,7 @@ class SessionPerson extends Person{
             $this->addVariable("LOGIN-email", parent::email());
             $this->addVariable("LOGIN-first_name", parent::first_name());
             $this->addVariable("LOGIN-last_name", parent::last_name());
-            $this->addVariable("LOGIN-role", parent::role());
+            $this->addVariable("LOGIN-roleId", parent::role());
             return true;
         }else
             return false;
@@ -23,7 +23,7 @@ class SessionPerson extends Person{
         $this->removeVariable("LOGIN-email");
         $this->removeVariable("LOGIN-first_name");
         $this->removeVariable("LOGIN-last_name");
-        $this->removeVariable("LOGIN-role");
+        $this->removeVariable("LOGIN-roleId");
     }
     /* Get Functions */
     public function isAuth(){
@@ -76,7 +76,7 @@ class SessionPerson extends Person{
             return $this->getVariable("LOGIN-role");
         else{
             $id = parent::role();
-            $this->addVariable("LOGIN-role", $id);
+            $this->addVariable("LOGIN-roleId", $id);
             return $id;
         }
     }
@@ -118,6 +118,24 @@ class SessionPerson extends Person{
     public function updatePassword($password){
         return parent::changePassword($this->id(), $password);
     }
+    public function updatePoints($points) {
+        if(parent::changePoints($this->id(), $points)){
+            $this->set("points", $points);
+            return true;
+        }
+    }
+    public function updateRole($roleId) {
+        if(parent::changePoints($this->id(), $roleId)){
+            $this->set("roleId", $roleId);
+            return true;
+        }
+    }
+//    public function addPoints($points) {
+//        return $this->updatePoints($this->points() + $points);
+//    }
+//    public function removePoints($points) {
+//        return $this->updatePoints($this->points() - $points);
+//    }
     //edit info function
     public function editInfo($id, $current_values, $email, $first_name, $last_name, $password_A, $password_B){
         $errors = array();
