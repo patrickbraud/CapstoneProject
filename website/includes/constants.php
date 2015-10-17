@@ -11,12 +11,15 @@ define("STARTING_POINTS", 1000);
 
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
-define("DB_PASS", "password1234");
+define("DB_PASS", "root");
 define("DB_DB", "ttu cs blog");
 
 
 /* TABLE NAMES */
 define("TBL_PEOPLE", "users");
+define("TBL_CATEGORIES", "categories");
+define("TBL_BLOG_POSTS", "blog_posts");
+define("TBL_ANSWERS", "answers");
 
 /* ROLES */
 define("ADMIN_ROLE", 0);

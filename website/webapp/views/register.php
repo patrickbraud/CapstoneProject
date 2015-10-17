@@ -3,6 +3,7 @@
 	$page->showHeader();
 ?>
 
+<<<<<<< HEAD
 <form class="form-horizontal" role="form">
 
 	<div class="form-group">
@@ -46,6 +47,8 @@
 </form>
 
 <?php
+=======
+>>>>>>> origin/master
 	$page->showFooter();
 ?>
 
