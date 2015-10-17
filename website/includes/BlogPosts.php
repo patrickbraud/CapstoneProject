@@ -21,4 +21,7 @@ class BlogPosts extends DAO{
         );
     }
 
+    function getAllFromCategoryId($categoryId) {
+        return $this->db->execute("SELECT * FROM ".$this->table." WHERE category = '".$categoryId."'")->fetchAll();
+    }
 }
