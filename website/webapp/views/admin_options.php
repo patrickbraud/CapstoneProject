@@ -17,7 +17,7 @@
 
 	<div class="form-group"> 
 		<div class="col-md-4">
-			<button type="edit_categories" class="btn btn-default"><a href="<?php echo $page->link("edit_categories"); ?>">Edit Categories</button>
+			<button type="show_categories" class="btn btn-default"><a href="<?php echo $page->link("show_categories"); ?>">Categories</button>
 		</div>
 	</div>
 
