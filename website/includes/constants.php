@@ -19,6 +19,7 @@ define("DB_DB", "ttu cs blog");
 define("TBL_PEOPLE", "users");
 define("TBL_CATEGORIES", "categories");
 define("TBL_BLOG_POSTS", "blog_posts");
+define("TBL_ANSWERS", "answers");
 
 /* ROLES */
 define("ADMIN_ROLE", 0);
