@@ -20,6 +20,8 @@
     addInclude("SessionPerson");
     addInclude("Categories");
     addInclude("BlogPosts");
+    addInclude("Answers");
+    addInclude("Users");
 
     $DB = new Database(DB_HOST, DB_USER, DB_PASS, DB_DB);
     //$People = new People($DB);
@@ -28,4 +30,6 @@
 
     $Categories = new Categories($DB);
     $BlogPosts = new BlogPosts($DB);
+    $Answers = new Answers($DB);
+    $Users = new Users($DB);
 

@@ -1,6 +1,6 @@
 <?php
 
-class Person extends People{
+class Person extends People {
     protected $db;
     private $email;
     private $first_name;
