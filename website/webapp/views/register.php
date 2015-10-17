@@ -2,7 +2,7 @@
 	$page = new Page("Registration");
 	$page->showHeader();
 
-	echo page();
+	echo pager();
 
 	$page->showFooter();
 ?>
