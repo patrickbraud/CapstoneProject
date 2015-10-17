@@ -19,10 +19,13 @@
     addInclude("Session");
     addInclude("SessionPerson");
     addInclude("Categories");
+    addInclude("BlogPosts");
 
     $DB = new Database(DB_HOST, DB_USER, DB_PASS, DB_DB);
     //$People = new People($DB);
     $Person = new Person($DB);
     $Session = new Session();
+
     $Categories = new Categories($DB);
+    $BlogPosts = new BlogPosts($DB);
 
