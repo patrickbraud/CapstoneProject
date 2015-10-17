@@ -17,4 +17,8 @@ class DAO {
     function getAll() {
         return $this->db->execute("SELECT * FROM ".$this->table)->fetchAll();
     }
+    function total() {
+        $this->db->execute("SELECT * FROM ".$this->table)->fetchAll();;
+        $this->db->numRows();
+    }
 }
