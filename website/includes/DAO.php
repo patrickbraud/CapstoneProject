@@ -15,7 +15,6 @@ class DAO {
         return $this->db->delete($this->table, "id = '".$id."'");
     }
     function getAll() {
-        echo $this->table;
         return $this->db->execute("SELECT * FROM ".$this->table)->fetchAll();
     }
 }
