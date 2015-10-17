@@ -1,0 +1,21 @@
+ttu cs blog categories
+
+
+AI
+Big Data
+Computer Architecture
+Computer Engineering
+Computer Graphics
+Computer Networks
+Data Structures
+Discrete Mathematics
+File Sharing
+Hacking
+History of Computer Science
+Human Computer Interaction
+Machine Learning
+Programming
+Robotics
+Security
+Software Engineering
+Theory of Computation
