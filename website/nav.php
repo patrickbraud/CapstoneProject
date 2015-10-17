@@ -9,20 +9,35 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#"><?php echo PROJECT_NAME; ?></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">About</a>
+				<li>
+                    <a href="#">Home</a>
                 </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
+                <!-- <li>
+                    <a href="#"></a>
+                </li> -->
                 <li>
                     <a href="#">Contact</a>
                 </li>
+				<li>
+                    <a href="#">My Account</a>
+                </li/>
+				<li>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Go!</button>
+					</form>
+				</li>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Sign In</a></li>
+					<li><a href="#">Register</a></li>
+				</ul>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
