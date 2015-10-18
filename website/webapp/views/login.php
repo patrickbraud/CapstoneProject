@@ -20,23 +20,19 @@
 		<label class="control-label col-md-offset-2 col-md-2" for="pwd">Password:</label>
 		<div class="col-md-4"> 
 			<input type="password" class="form-control" id="password" placeholder="Enter password" aria-describedby="basic-addon2">
-			<button type="login" class="btn btn-default">Login</button>
+			<button type="login" class="btn btn-default btn-block">Login</button>
 		</div>
 	</div>
 
 	<div class="form-group"> 
 		<div class="col-md-offset-4">
-			<div class="col-md-4">
-				<button type="register" class="btn btn-default">New user? Click here to register</button>
+			<div class="col-md-6">
+				<button type="register" class="btn btn-default btn-block">New user? Click here to register</button>
 			</div>
 		</div>
 	</div>
-
 </form>
 
 <?php
 	$page->showFooter();
 ?>
-
-
-

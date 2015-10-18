@@ -22,7 +22,7 @@ define("TBL_BLOG_POSTS", "blog_posts");
 define("TBL_ANSWERS", "answers");
 
 /* ROLES */
-define("ADMIN_ROLE", 0);
-define("USER_ROLE", 1);
-define("STAFF_ROLE", 2);
+define("USER_ROLE", 0);
+define("STAFF_ROLE", 1);
+define("ADMIN_ROLE", 2);
 

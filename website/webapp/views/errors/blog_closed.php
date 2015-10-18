@@ -1,7 +1,6 @@
 <?php
 	$page = new Page("Close Blog");
 	$page->showHeader();
-
 ?>
 
 <form class="form-horizontal" role="form">

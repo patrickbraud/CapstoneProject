@@ -3,8 +3,6 @@
 	$page->showHeader();
 ?>
 
-
-	
  <div class="container col-md-offset-1 col-md-10"<
  	<div class="form-group col-md-10">
 	  	<label for="comment">Title:</label>

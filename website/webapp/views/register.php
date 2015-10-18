@@ -3,7 +3,6 @@
 	$page->showHeader();
 ?>
 
-
 <form class="form-horizontal" role="form">
 
 	<div class="form-group">
@@ -40,8 +39,8 @@
 	</div>
 
 	<div class="form-group"> 
-		<div class="col-md-offset-4 col-md-10">
-		  <button type="register" class="btn btn-default">Register</button>
+		<div class="col-md-offset-4 col-md-4">
+		  <button type="register" class="btn btn-default btn-block">Register</button>
 		</div>
 	</div>
 </form>
@@ -50,6 +49,3 @@
 
 	$page->showFooter();
 ?>
-
-
-

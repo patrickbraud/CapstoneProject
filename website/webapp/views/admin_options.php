@@ -32,11 +32,8 @@
 			<button type="blog_closed" class="btn btn-default"><a href="<?php echo $page->link("blog_closed", "errors"); ?>">Close Blog</button>
 		</div>
 	</div>
-
 </form>
 
 <?php
 	$page->showFooter();
 ?>
- 
-
