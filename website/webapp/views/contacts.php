@@ -10,7 +10,7 @@
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-body">Randall Harper</div>
-    <div class="panel-footer">Email: randall.harper@ttu.edu</div>
+    <div class="panel-footer">Email : randall.harper@ttu.edu</div>
   </div>
 </div>
 

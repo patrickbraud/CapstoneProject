@@ -17,16 +17,16 @@
 				<li>
                     <a href="?page=home">Home</a>
                 </li>
-                <!-- <li>
-                    <a href="#"></a>
-                </li> -->
                 <li>
                     <a href="?page=contacts">Contact</a>
                 </li>
-				<li>
+                <!-- ONLY show this button if logged in
+                <li>
                     <a href="#">My Account</a>
-                </li/>
+                </li>
+                 -->
 				<li>
+
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search">

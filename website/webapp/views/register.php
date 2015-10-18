@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="form-group">
-		<label class="control-label col-md-offset-2 col-md-2" for="email">TTU email:</label>
+		<label class="control-label col-md-offset-2 col-md-2" for="email">Email:</label>
 		<div class="col-md-4">
 			<input type="email" class="form-control" id="email" placeholder="Enter TTU email">
 			<span class="input-group-addon">@ttu.edu emails only</span>

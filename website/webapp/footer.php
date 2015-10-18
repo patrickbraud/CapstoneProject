@@ -7,7 +7,7 @@
 <!-- Footer -->
 <footer>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="text-center col-md-12">
             <p><?php echo PAGE_FOOTER; ?></p>
         </div>
         <!-- /.col-lg-12 -->
