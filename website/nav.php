@@ -15,13 +15,13 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 				<li>
-                    <a href="#">Home</a>
+                    <a href="?page=home">Home</a>
                 </li>
                 <!-- <li>
                     <a href="#"></a>
                 </li> -->
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="?page=contacts">Contact</a>
                 </li>
 				<li>
                     <a href="#">My Account</a>
@@ -35,8 +35,8 @@
 					</form>
 				</li>
 				<ul class="nav navbar-nav">
-					<li><a href="#">Sign In</a></li>
-					<li><a href="#">Register</a></li>
+					<li><a href="?page=login">Sign In</a></li>
+					<li><a href="?page=register">Register</a></li>
 				</ul>
             </ul>
         </div>
