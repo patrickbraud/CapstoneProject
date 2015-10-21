@@ -33,8 +33,15 @@
 	<div class="form-group">
 		<label class="control-label col-md-offset-2 col-md-2" for="password">Password:</label>
 		<div class="col-md-4"> 
-			<input type="password" class="form-control" id="password" placeholder="Enter password">
+			<input type="password" class="form-control" id="password_A" placeholder="Enter password">
 			<span class="input-group-addon">We recommend not using your eRaider password</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-md-offset-2 col-md-2" for="password">Re-enter Password:</label>
+		<div class="col-md-4"> 
+			<input type="password" class="form-control" id="password_B" placeholder="Enter password">
 		</div>
 	</div>
 
