@@ -3,6 +3,14 @@
 	$page->requireAdmin($Role);
 
 	if(!is_null($page->getQuery("id"))) {
+		$id = $page->getQuery("id");
+		if(isset($_POST["submit"])) {
+			$Categories->update($id, $_POST["name"]);
+			$Session->add("cate_msg", "Updated Category");
+			$page->removeQuery("id");
+			$page->redirect();
+		}
+		$c = $Categories->get($id);
 		$page->showHeader();
 		echo '<a href="'.$page->link("home", "admin").'">Admin Home</a>';
 	?>
@@ -12,11 +20,10 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-md-offset-2 col-md-2" for="name">Email:</label>
+				<label class="control-label col-md-offset-2 col-md-2" for="name">Category Name:</label>
 
 				<div class="col-md-4">
-					<input type="name" class="form-control" name="name" id="name" placeholder="Enter TTU email"
-						   aria-describedby="basic-addon2">
+					<input type="name" class="form-control" name="name" id="name" value="<?php echo $c["name"]; ?>" aria-describedby="basic-addon2">
 				</div>
 			</div>
 
@@ -24,8 +31,7 @@
 			<div class="form-group">
 				<div class="col-md-offset-4">
 					<div class="col-md-6">
-						<button type="register" class="btn btn-default btn-block">New user? Click here to register
-						</button>
+						<input type="submit" class="btn btn-default btn-block" id="submit" name="submit" value="Edit"/>
 					</div>
 				</div>
 			</div>
@@ -34,6 +40,9 @@
 	<?php
 	} else {
 		$page->showHeader();
+		if(!is_null($Session->get("cate_msg"))) {
+			echo $Session->get("cate_msg");
+		}
 		echo '<a href="'.$page->link("home", "admin").'">Admin Home</a>';
 		?>
 		<form class="form-horizontal" role="form">
