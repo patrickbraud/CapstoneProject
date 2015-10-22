@@ -9,8 +9,7 @@ class People{
         return $this->db->fetchAll();
     }
     public function addPerson($email, $first_name, $last_name, $password, $roleId, $points){
-        $this->db->execute("INSERT INTO ".TBL_PEOPLE."
-			(email, first_name, last_name, password, $roleId, $points) VALUES ('".$email."', '".$first_name."', '".$last_name."', '".$password."', '".$roleId."', '".$points."')");
+        $this->db->execute("INSERT INTO ".TBL_PEOPLE." (first_name, last_name, email, password, role_id, points) VALUES ('".$first_name."', '".$last_name."', '".$email."','".$password."', '".$roleId."', '".$points."')");
     }
     public function deletePerson($id){
         $this->db->delete(TBL_PEOPLE, "id = '".$id."'");
@@ -146,7 +145,7 @@ class People{
                 $errors["email"] = "Email is already in use."; //Email is already in the database.
             }
         }else{
-            $errors["email"] = "Email is invalid."; //Email is not vaild.
+            $errors["email"] = "Email is invalid."; //Email is not valid..
         }
         //First Name Checking..
         $values["first_name"] = strtolower($first_name);

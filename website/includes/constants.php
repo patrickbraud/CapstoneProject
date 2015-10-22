@@ -14,6 +14,8 @@ define("DB_USER", "root");
 define("DB_PASS", "root");
 define("DB_DB", "ttu cs blog");
 
+define("SALT", "jameslittleisthebestintheworld");
+
 
 /* TABLE NAMES */
 define("TBL_PEOPLE", "users");
