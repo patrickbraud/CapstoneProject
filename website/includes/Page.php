@@ -14,6 +14,7 @@ class Page {
     private $messageArraySize;
     private $person;
 
+    private $prefix = "webapp/";
     private $header = "webapp/header.php";
     private $footer = "webapp/footer.php";
     private $assetDir = "webapp/assets/";
@@ -156,6 +157,10 @@ class Page {
             return $_GET['page'];
         else
             return "?";
+    }
+
+    public function getModule($moduleName) {
+        include($this->prefix."views/modules/".$moduleName.".php");
     }
 
     public function getPage() {

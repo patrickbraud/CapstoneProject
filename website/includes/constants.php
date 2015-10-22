@@ -1,19 +1,20 @@
 <?php
-
+/* METADATA */
 define("PROJECT_NAME", "CS Web Blog");
 define("PROJECT_DESC", "Something something, give us an A.");
 define("PROJECT_AUTHORS", "James Little, Jason Webb, Patrick Braud, and Randall Harper.");
-
 define("PAGE_FOOTER", "Copyright &copy; ".PROJECT_NAME." 2015");
 
+/* POINTS */
 define("STARTING_POINTS", 100);
+define("QUESTION_POINTS", 10);
+define("AWARD_POINTS", 20);
 
-
+/* DATABASE */
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "root");
 define("DB_DB", "ttu cs blog");
-
 define("SALT", "jameslittleisthebestintheworld");
 
 /* PAGES */

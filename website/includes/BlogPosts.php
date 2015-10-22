@@ -24,4 +24,17 @@ class BlogPosts extends DAO{
     function getAllFromCategoryId($categoryId) {
         return $this->db->execute("SELECT * FROM ".$this->table." WHERE category = '".$categoryId."'")->fetchAll();
     }
+
+    function hasAnswer($id) {
+        return $this->get($id)["correctAnswerId"] > 0;
+    }
+
+    function isPoster($id, $userId) {
+        return $this->get($id)["user_id"] == $userId;
+    }
+
+    function markAnswer($id, $markId) {
+        $this->db->update($this->table, "correctAnswerId = '".$markId."'", "id = '".$id."'");
+    }
+
 }

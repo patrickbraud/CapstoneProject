@@ -104,7 +104,7 @@
 					?>
 					<button type="button" class="list-group-item">
 						<a href="<?php echo $page->link("categories", "admin") . "&id=" . $c["id"]; ?>"><?php echo $c["name"]; ?></a>
-						<a href="<?php echo $page->link("categories", "admin") . "&delete=" . $c["id"]; ?>">[Delete]</a>
+						[<a href="<?php echo $page->link("categories", "admin") . "&delete=" . $c["id"]; ?>">Delete</a>]
 					</button>
 					<?php
 				}
