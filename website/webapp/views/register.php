@@ -1,5 +1,11 @@
 <?php
-	$page = new Page("Registration");
+	$page = new Page("Registration", $SessionPerson);
+
+	if($SessionPerson->isAuth()) {
+		$page->changeQuery("page", LANDING_PAGE);
+		$page->redirect();
+		exit;
+	}
 
 	function printError($error) {
 		if(isset($error) && $error != NULL) echo $error;

@@ -1,5 +1,6 @@
 <?php
-	$page = new Page("Edit Users Page");
+	$page = new Page("Edit Users Page", $SessionPerson);
+	$page->requireLogin();
 	$page->showHeader();
 ?>
 

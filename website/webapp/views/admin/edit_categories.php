@@ -1,5 +1,6 @@
 <?php
-	$page = new Page("Edit Categories Page");
+	$page = new Page("Edit Categories Page", $SessionPerson);
+	$page->requireAdmin();
 	$page->showHeader();
 ?>
 

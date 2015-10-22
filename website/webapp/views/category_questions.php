@@ -1,5 +1,6 @@
 <?php
-    $page = new Page("Category Here");
+    $page = new Page("Category Here", $SessionPerson);
+	$page->requireLogin();
     $page->showHeader();
 
     
@@ -82,7 +83,7 @@
 ?>
 </div>
 
-<?php>
+<?php
 	
     $page->showFooter();
 ?>

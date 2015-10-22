@@ -6,7 +6,7 @@ define("PROJECT_AUTHORS", "James Little, Jason Webb, Patrick Braud, and Randall 
 
 define("PAGE_FOOTER", "Copyright &copy; ".PROJECT_NAME." 2015");
 
-define("STARTING_POINTS", 1000);
+define("STARTING_POINTS", 100);
 
 
 define("DB_HOST", "localhost");
@@ -18,7 +18,7 @@ define("SALT", "jameslittleisthebestintheworld");
 
 
 define("LOGIN_PAGE", "login");
-define("LANDING_PAGE", "categories"); //The page after they login.
+define("LANDING_PAGE", "home"); //The page after they login.
 define("HOME_PAGE", "login");
 
 /* TABLE NAMES */

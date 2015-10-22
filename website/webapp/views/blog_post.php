@@ -1,5 +1,6 @@
 <?php
-    $page = new Page("TTU Computer Science Blog");
+    $page = new Page("TTU Computer Science Blog", $SessionPerson);
+    $page->requireLogin();
     $page->showHeader();
 
 
