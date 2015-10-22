@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="container col-md-6">
-			<a href="#">Add Post</a>
+			<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</a>
 		<?php
 			$posts = $BlogPosts->getAllFromCategoryId($id);
 			if(count($posts) > 0) {

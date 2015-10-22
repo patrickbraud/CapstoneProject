@@ -36,7 +36,7 @@
 				</li>
 				<ul class="nav navbar-nav">
                     <?php if($this->isAuth()) { //If logged in ?>
-                            <li><a href="#">Welcome <?php echo $this->person->fullName(); ?></a></li>
+                            <li><a href="#">Welcome <?php echo $this->person->fullName(); ?> (<?php echo $this->person->points(); ?>)</a></li>
                             <li><a href="?page=logout">Logout</a></li>
                    <?php  } else { // not Logged in ?>
                         <li><a href="?page=login">Sign In</a></li>
