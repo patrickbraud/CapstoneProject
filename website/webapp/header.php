@@ -67,9 +67,6 @@
         return $output;
     }
 
-    array(
-        "id" => "this"
-    );
     /*function makeList($list = array()) { //array(
         $output = '<div class="list-group">';
           foreach ($i as array_keys($list)) {

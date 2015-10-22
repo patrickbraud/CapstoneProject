@@ -1,5 +1,6 @@
 <?php
-    $page = new Page();
+    $page = new Page("", $SessionPerson);
+    $page->requireLogin();
 
     if($page->getQuery("id") != NULL) {
         $post = $BlogPosts->get($page->getQuery("id"));
@@ -7,7 +8,7 @@
         $page->setTitle($post["title"]);
         $page->showHeader();
 ?>
-<<<<<<< HEAD
+
 
 <div class = "container col-md-12">
 	<div class="panel panel-primary">
@@ -42,7 +43,6 @@
 <div class="btn-group" role="group">
   <button type="button" class="btn btn-default">Submit</button>
 </div>
-=======
     <div class = "container col-md-12">
         <h3><?php echo $post["title"]; ?></h3>
 	    <div class="panel panel-primary">
@@ -78,7 +78,6 @@
       <label for="comment">Answer Question:</label>
       <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
->>>>>>> origin/master
 
     <div class="btn-group" role="group" aria-label="...">
       <button type="button" class="btn btn-default">Submit</button>

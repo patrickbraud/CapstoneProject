@@ -12,6 +12,7 @@ class Page {
     private $crumb_size;
     private $messageArray;
     private $messageArraySize;
+    private $person;
 
     private $header = "webapp/header.php";
     private $footer = "webapp/footer.php";
@@ -22,13 +23,12 @@ class Page {
     private $sessionKey = "__prev_page";
 
 
-    public function __construct($title = "", $show_crumbs = false, $path = ""){
+    public function __construct($title = "", Person $person = NULL, $show_crumbs = false, $path = ""){
         $this->setQuery($_SERVER['QUERY_STRING']);
         $this->setTitle($title);
         $this->setPath($path);
         $this->setCrumbs($show_crumbs);
-        //$this->setSession(new Session());
-
+        $this->person = $person;
         //$this->capturePage();
         $this->messageArray = array();
         $this->messageArraySize = 0;
@@ -62,12 +62,30 @@ class Page {
     public function setPath($path){
         $this->path = $path;
     }
-
     public function getPath() {
         return $this->path;
     }
-
-
+    public function requireLogin(){ //For "Person $person" see Person.php in core/Person.php
+        if(!$this->person->isAuth()){
+            if(is_null($this->getQuery("page")))
+                $this->addQuery("page", LOGIN_PAGE);
+            else
+                $this->changeQuery("page", LOGIN_PAGE);
+            $this->addQuery("ref", $this->getCurrentPage());
+            $this->redirect();
+            exit;
+        }
+    }
+    public function requireAdmin() {
+        //TODO
+        return $this->requireLogin();
+    }
+    private function isAuth() {
+        if(isset($this->person) && $this->person != NULL)
+            return $this->person->isAuth();
+         else
+            return false;
+    }
 
     public function showHeader(){
         include($this->path.$this->header);

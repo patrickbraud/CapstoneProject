@@ -1,5 +1,6 @@
 <?php
-    $page = new Page("New Post");
+    $page = new Page("New Post", $SessionPerson);
+	$page->requireLogin();
     $page->showHeader();
 
 ?>

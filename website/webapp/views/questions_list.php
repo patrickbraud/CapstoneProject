@@ -1,6 +1,7 @@
 <?php
 
-    $page = new Page();
+    $page = new Page("", $SessionPerson);
+    $page->requireLogin();
 
     if($page->getQuery("id") != NULL && $page->getQuery("name") != NULL) {
         $page->setTitle("Questions for ".$page->getQuery("name"));

@@ -2,7 +2,7 @@
 	$page = new Page("Registration");
 
 	function printError($error) {
-		if(isset($error)) echo $error;
+		if(isset($error) && $error != NULL) echo $error;
 		else echo "";
 	}
 

@@ -17,6 +17,10 @@ define("DB_DB", "ttu cs blog");
 define("SALT", "jameslittleisthebestintheworld");
 
 
+define("LOGIN_PAGE", "login");
+define("LANDING_PAGE", "categories"); //The page after they login.
+define("HOME_PAGE", "login");
+
 /* TABLE NAMES */
 define("TBL_PEOPLE", "users");
 define("TBL_CATEGORIES", "categories");

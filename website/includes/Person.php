@@ -28,7 +28,7 @@ class Person extends People {
                 $this->first_name = ucfirst($result['first_name']);
                 $this->last_name = ucfirst($result['last_name']);
                 $this->points = $result["points"];
-                $this->roleId = $result["roleId"];
+                $this->roleId = $result["role_id"];
                 $this->auth = true;
                 $return = true;
             }

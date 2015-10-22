@@ -1,5 +1,5 @@
 <?php
-class SessionPerson extends Person{
+class SessionPerson extends Person {
     private $session;
     public function __construct($db, $session){
         parent::__construct($db);

@@ -27,7 +27,7 @@
     $People = new People($DB);
     $Person = new Person($DB);
     $Session = new Session();
-
+    $SessionPerson = new SessionPerson($DB, $Session);
     $Categories = new Categories($DB);
     $BlogPosts = new BlogPosts($DB);
     $Answers = new Answers($DB);

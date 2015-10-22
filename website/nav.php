@@ -35,8 +35,13 @@
 					</form>
 				</li>
 				<ul class="nav navbar-nav">
-					<li><a href="?page=login">Sign In</a></li>
-					<li><a href="?page=register">Register</a></li>
+                    <?php if($this->isAuth()) { //If logged in ?>
+                            <li><a href="#">Welcome <?php echo $this->person->fullName(); ?></a></li>
+                            <li><a href="?page=logout">Logout</a></li>
+                   <?php  } else { // not Logged in ?>
+                        <li><a href="?page=login">Sign In</a></li>
+                        <li><a href="?page=register">Register</a></li>
+                   <?php } ?>
 				</ul>
             </ul>
         </div>

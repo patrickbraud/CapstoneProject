@@ -1,5 +1,5 @@
 <?php
-	$page = new Page("Contacts");
+	$page = new Page("Contacts", $SessionPerson);
 	$page->showHeader();
 
 ?>
