@@ -30,7 +30,7 @@
 
 <div class="panel-group">
   <div class="panel panel-default">
-    <div class="panel-body">Jason Webb</div>
+    <div class="panel-body">Jason Weber</div>
     <div class="panel-footer">Email : jason.webb@ttu.edu</div>
   </div>
 </div>
