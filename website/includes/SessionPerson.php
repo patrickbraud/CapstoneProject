@@ -13,6 +13,7 @@ class SessionPerson extends Person {
             $this->addVariable("LOGIN-first_name", parent::first_name());
             $this->addVariable("LOGIN-last_name", parent::last_name());
             $this->addVariable("LOGIN-roleId", parent::role());
+            $this->addVariable("LOGIN-points", parent::points());
             return true;
         }else
             return false;
@@ -24,6 +25,7 @@ class SessionPerson extends Person {
         $this->removeVariable("LOGIN-first_name");
         $this->removeVariable("LOGIN-last_name");
         $this->removeVariable("LOGIN-roleId");
+        $this->removeVariable("LOGIN-points");
     }
     /* Get Functions */
     public function isAuth(){
@@ -80,6 +82,16 @@ class SessionPerson extends Person {
             return $id;
         }
     }
+    public function points() {
+        if($this->exists("LOGIN-points"))
+            return $this->getVariable("LOGIN-points");
+        else{
+            $id = parent::role();
+            $this->addVariable("LOGIN-points", $id);
+            return $id;
+        }
+    }
+
     public function fullName(){
         return $this->__toString();
     }
