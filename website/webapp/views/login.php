@@ -34,7 +34,6 @@
 				<div class="col-md-4">
 					<input type="email" class="form-control" name="email" id="email" placeholder="Enter TTU email"
 						   aria-describedby="basic-addon2">
-					<span class="input-group-addon" id="basic-addon2">@ttu.edu</span>
 				</div>
 			</div>
 

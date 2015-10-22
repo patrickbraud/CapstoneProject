@@ -4,6 +4,7 @@
 
 	if(!is_null($page->getQuery("id"))) {
 		$page->showHeader();
+		echo '<a href="'.$page->link("home", "admin").'">Admin Home</a>';
 	?>
 		<form class="form-horizontal" role="form" method="post" action="<?php echo $page->currentURL(); ?>">
 
@@ -33,6 +34,7 @@
 	<?php
 	} else {
 		$page->showHeader();
+		echo '<a href="'.$page->link("home", "admin").'">Admin Home</a>';
 		?>
 		<form class="form-horizontal" role="form">
 			<div class="form-group">
