@@ -1,6 +1,6 @@
 <?php
 	$page = new Page("Admin Options", $SessionPerson);
-	$page->requireAdmin();
+	$page->requireAdmin($Role);
 	$page->showHeader();
 ?>
 

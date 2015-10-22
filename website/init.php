@@ -22,6 +22,7 @@
     addInclude("BlogPosts");
     addInclude("Answers");
     addInclude("Users");
+    addInclude("Role");
 
     $DB = new Database(DB_HOST, DB_USER, DB_PASS, DB_DB);
     $People = new People($DB);
@@ -32,4 +33,5 @@
     $BlogPosts = new BlogPosts($DB);
     $Answers = new Answers($DB);
     $Users = new Users($DB);
+    $Role = new Role($DB);
 

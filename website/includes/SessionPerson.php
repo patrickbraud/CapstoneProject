@@ -72,8 +72,8 @@ class SessionPerson extends Person {
         }
     }
     public function role(){
-        if($this->exists("LOGIN-role"))
-            return $this->getVariable("LOGIN-role");
+        if($this->exists("LOGIN-roleId"))
+            return $this->getVariable("LOGIN-roleId");
         else{
             $id = parent::role();
             $this->addVariable("LOGIN-roleId", $id);

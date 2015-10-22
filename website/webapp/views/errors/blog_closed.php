@@ -1,5 +1,5 @@
 <?php
-	$page = new Page("Close Blog");
+	$page = new Page("Close Blog", $SessionPerson);
 	$page->showHeader();
 ?>
 

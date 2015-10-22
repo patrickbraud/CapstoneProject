@@ -1,15 +1,45 @@
 <?php
 
-class Role {
-    private $db;
-    function __construct($db){
-        $this->db = $db;
+class Role extends DAO {
+
+    function __construct($db) {
+        parent::__construct($db, TBL_ROLES);
     }
-    public function remove($id) {
-        return $this->db->delete(TBL_ROLES, $id);
+
+    function add($roleName) {
+        return $this->db->execute("INSERT INTO ".$this->table." (name) VALUES ('".$roleName."')");
     }
-    public function get($id) {
-        $this->db->execute("SELECT * FROM ".TBL_ROLES." WHERE id = '.$id.'");
-        return $this->db->fetchAll();
+
+    function update($id, $roleName) {
+        return $this->db->execute("UPDATE ".$this->table." SET name = '".$roleName."' WHERE id = '".$id."'");
     }
+
+    function getAdminRole() {
+        return ADMIN_ROLE;
+    }
+
+    function getUserRole() {
+        return USER_ROLE;
+    }
+
+    function getStaffRole() {
+        return STAFF_ROLE;
+    }
+
+    private function isRole($roleId, $comparedRoleId) {
+        return $roleId == $comparedRoleId;
+    }
+
+    function isAdmin($roleId) {
+        return $this->isRole($roleId, $this->getAdminRole());
+    }
+
+    function isUser($roleId) {
+        return $this->isRole($roleId, $this->getUserRole());
+    }
+
+    function isStaff($roleId) {
+        return $this->isRole($roleId, $this->getStaffRole());
+    }
+
 }

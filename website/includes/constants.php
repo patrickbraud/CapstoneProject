@@ -16,16 +16,18 @@ define("DB_DB", "ttu cs blog");
 
 define("SALT", "jameslittleisthebestintheworld");
 
-
+/* PAGES */
 define("LOGIN_PAGE", "login");
 define("LANDING_PAGE", "home"); //The page after they login.
 define("HOME_PAGE", "login");
+define("UNAUTH_PAGE", "notfound");
 
 /* TABLE NAMES */
 define("TBL_PEOPLE", "users");
 define("TBL_CATEGORIES", "categories");
 define("TBL_BLOG_POSTS", "blog_posts");
 define("TBL_ANSWERS", "answers");
+define("TBL_ROLES", "roles");
 
 /* ROLES */
 define("USER_ROLE", 0);

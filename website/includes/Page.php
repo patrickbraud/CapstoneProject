@@ -76,15 +76,25 @@ class Page {
             exit;
         }
     }
-    public function requireAdmin() {
-        //TODO
-        return $this->requireLogin();
+    public function requireAdmin(Role $role) {
+        if(!$this->person->isAuth() || !$role->isAdmin($this->person->role())){
+            if(is_null($this->getQuery("page")))
+                $this->addQuery("page", UNAUTH_PAGE);
+            else
+                $this->changeQuery("page", UNAUTH_PAGE);
+
+            $this->redirect();
+            exit;
+        }
     }
     private function isAuth() {
         if(isset($this->person) && $this->person != NULL)
             return $this->person->isAuth();
          else
             return false;
+    }
+    public function isAdmin(Role $Role) {
+        return ($Role->isAdmin($this->person->role()));
     }
 
     public function showHeader(){
