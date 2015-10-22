@@ -8,7 +8,7 @@
         if(!is_null($page->getQuery("mark"))) {
             $markId = $page->getQuery("mark");
             $correctUser = $Answers->get($markId)["user_id"];
-            $People->addPoints($correctUser, AWARD_POINTS);
+            $SessionPerson->addPoints($correctUser, AWARD_POINTS);
             $BlogPosts->markAnswer($id, $markId);
             $page->removeQuery("mark");
             $page->redirect();

@@ -11,7 +11,7 @@
 		$now = date("o-m-d");
 
 		$BlogPosts->add($title, $body, 0, $id, $userId, $now, 0);
-		$People->removePoints($userId, QUESTION_POINTS);
+		$SessionPerson->removePoints($userId, QUESTION_POINTS);
 		$page->addQuery("id", $id);
 		$page->changeQuery("page", "category_questions");
 		$page->redirect();

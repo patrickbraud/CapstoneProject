@@ -142,12 +142,12 @@ class SessionPerson extends Person {
             return true;
         }
     }
-//    public function addPoints($points) {
-//        return $this->updatePoints($this->points() + $points);
-//    }
-//    public function removePoints($points) {
-//        return $this->updatePoints($this->points() - $points);
-//    }
+    public function addPoints($points) {
+        return $this->updatePoints($this->points() + $points);
+    }
+    public function removePoints($points) {
+        return $this->updatePoints($this->points() - $points);
+    }
     //edit info function
     public function editInfo($id, $current_values, $email, $first_name, $last_name, $password_A, $password_B){
         $errors = array();
