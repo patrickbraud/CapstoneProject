@@ -42,4 +42,12 @@ class Role extends DAO {
         return $this->isRole($roleId, $this->getStaffRole());
     }
 
+    function getRoleName($roleId) {
+        $s = "";
+        if($this->isAdmin($roleId)) $s =  "Admin";
+        else if($this->isStaff($roleId)) $s = "Staff";
+        else $s = "User";
+        return $s;
+    }
+
 }
