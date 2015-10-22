@@ -51,7 +51,8 @@
 			<div class="form-group">
 				<div class="col-md-offset-4">
 					<div class="col-md-6">
-						<button type="register" class="btn btn-default btn-block">New user? Click here to register
+						<button type="register" class="btn btn-default btn-block">
+							<a href="?page=register">New user? Click here to register</a>
 						</button>
 					</div>
 				</div>

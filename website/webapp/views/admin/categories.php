@@ -5,13 +5,28 @@
 	if(!is_null($page->getQuery("id"))) {
 		$page->showHeader();
 	?>
-		<form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form" method="post" action="<?php echo $page->currentURL(); ?>">
+
 			<div class="form-group">
 			</div>
 
 			<div class="form-group">
-				<h2>Categories</h2>
+				<label class="control-label col-md-offset-2 col-md-2" for="name">Email:</label>
 
+				<div class="col-md-4">
+					<input type="name" class="form-control" name="name" id="name" placeholder="Enter TTU email"
+						   aria-describedby="basic-addon2">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-md-offset-4">
+					<div class="col-md-6">
+						<button type="register" class="btn btn-default btn-block">New user? Click here to register
+						</button>
+					</div>
+				</div>
 			</div>
 		</form>
 
