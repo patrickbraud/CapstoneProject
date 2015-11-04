@@ -9,9 +9,6 @@
        echo "<a href=".$page->link("home", "admin").">Admin Panel</a>";
     }
 
-    /*
-    * TODO: get the two newest posts from each category..
-    */
 ?>
     
   	<div class="container col-md-12">

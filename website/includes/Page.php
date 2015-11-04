@@ -88,7 +88,7 @@ class Page {
             exit;
         }
     }
-    private function isAuth() {
+    public function isAuth() {
         if(isset($this->person) && $this->person != NULL)
             return $this->person->isAuth();
          else

@@ -1,6 +1,6 @@
 <?php
     $page = new Page("Category Here", $SessionPerson);
-	$page->requireLogin();
+	$page->getModule("blogPost");
     $page->showHeader();
 
     if(!is_null($page->getQuery("id"))) {
@@ -18,37 +18,24 @@
 		</div>
 
 		<div class="container col-md-6">
-			<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</a>
+			<?php  if($page->isAuth()) { ?>
+				<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</a>
+			<?php } ?>
 		<?php
 			$posts = $BlogPosts->getAllFromCategoryId($id);
 			if(count($posts) > 0) {
 				foreach ($posts as $b) {
 					$user = $Users->get($b["user_id"]);
-		?>
-					<div class="row">
-						<h3>
-							<div>
-								<a href="?page=question&id=<?php echo $b["id"]; ?>"><?php echo $b["title"]; ?></a>
-								<br/>
-							</div>
-						</h3>
-						<p class="lead">by <?php echo $user["first_name"]." ".$user["last_name"]; ?></p>
-
-						<p><span class="glyphicon glyphicon-time"></span> <?php echo $b["date_posted"]; ?></p>
-						<hr>
-					</div>
-		<?php
+					blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"]);
 				}
 			} else {
 		?>
-					<div class="row">
-						<p>There is no post here.</p>
-					</div>
+				<div class="row">
+					<p>There is no post here.</p>
+				</div>
 		<?php
 			}
 		?>
-
-
 
 		</div>
 
