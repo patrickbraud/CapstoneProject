@@ -1,6 +1,8 @@
 <?php
     $page = new Page("", $SessionPerson);
 
+    $page->getModule("categories");
+
     if($page->getQuery("id") != NULL) {
         $id = $page->getQuery("id");
         $post = $BlogPosts->get($id);
@@ -24,7 +26,9 @@
             $page->setTitle($post["title"]);
             $page->showHeader();
     ?>
-        <div class = "container col-md-12">
+
+    <?php listCategories($Categories); ?>
+        <div class = "container col-md-8">
             <h3><?php echo $post["title"]; ?></h3>
             <?php if($page->isAdmin($Role)) {
                 if($post["marked"] == 0) { ?>
@@ -42,7 +46,6 @@
                 </div>
                 </div>
             <div class="panel-body"><?php echo $post['post']; ?></div>
-        </div>
         </div>
         </div>
         <?php
@@ -73,7 +76,7 @@
             }
             if(!$hasAnswer && $SessionPerson->isAuth()) {
         ?>
-            <form action="<?php echo $page->currentURL(); ?>" method="post">
+            <form action="<?php echo $page->currentURL(); ?>" method="post" class="col-md-8">
 
                 <div class="form-group">
                   <label for="comment">Answer Question:</label>
