@@ -18,28 +18,24 @@
 		<div class="panel panel-default col-md-offset-4 col-md-4">
 			<div class="panel-body text-center">
 				<h2><?php echo $page->getTitle(); ?></h2>
-			</div>Upda
+			</div>
 		</div>
 	</div>
 
 	<?php
-    listCategories($Categories);
-?>
+    	listCategories($Categories);
+	?>
 
 	<div class="container col-md-6">
 		<?php
 			foreach($Categories->getAll() as $c) {
 				foreach($BlogPosts->getAllFromCategoryId($c["id"], 1) as $b) {
 					$u = $Users->get($b["user_id"]);
-					blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
+					orm($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
 				}
 			}
 		?>
 	</div>
-    
-    
-    
-    
 
 <?php
     $page->showFooter();
