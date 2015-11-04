@@ -21,8 +21,12 @@ class BlogPosts extends DAO{
         );
     }
 
-    function getAllFromCategoryId($categoryId) {
-        return $this->db->execute("SELECT * FROM ".$this->table." WHERE category = '".$categoryId."'")->fetchAll();
+    function getAllFromCategoryId($categoryId, $limit = 0) {
+        $q = "SELECT * FROM ".$this->table." WHERE category = '".$categoryId."' ORDER BY id DESC";
+        if($limit > 0)
+            $q = $q." LIMIT $limit";
+
+        return $this->db->execute($q)->fetchAll();
     }
 
     function hasAnswer($id) {

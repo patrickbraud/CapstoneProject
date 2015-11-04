@@ -1,5 +1,8 @@
 <?php
     $page = new Page("Home", $SessionPerson);
+
+	$page->getModule("categories");
+	$page->getModule("blogPost");
     $page->showHeader();
 
     if($page->isAdmin($Role)) {
@@ -15,73 +18,23 @@
 		<div class="panel panel-default col-md-offset-4 col-md-4">
 			<div class="panel-body text-center">
 				<h2><?php echo $page->getTitle(); ?></h2>
-			</div>
+			</div>Upda
 		</div>
 	</div>
 
 	<?php
-	$page->getModule("categories");
     listCategories($Categories);
 ?>
 
 	<div class="container col-md-6">
-		<div class="row">
-			<h3>
-				<div>
-					<a href="">Post Title</a>
-					<br/>
-				</div>
-			</h3>
-			<h4>
-				<div>
-					<a href="">Category</a>
-				</div>
-			</h4>
-			<p class="lead">by: Name Here</p>
-
-			<p><span class="glyphicon glyphicon-time"> Date Here <!--</span> <?php echo $b["date_posted"]; ?> --></p>
-			<hr>
-		</div>
-	</div>
-
-	<div class="container col-md-6">
-		<div class="row">
-			<h3>
-				<div>
-					<a href="">Post Title</a>
-					<br/>
-				</div>
-			</h3>
-			<h4>
-				<div>
-					<a href="">Category</a>
-				</div>
-			</h4>
-			<p class="lead">by: Name Here</p>
-
-			<p><span class="glyphicon glyphicon-time"> Date Here <!--</span> <?php echo $b["date_posted"]; ?> --></p>
-			<hr>
-		</div>
-	</div>
-
-	<div class="container col-md-6">
-		<div class="row">
-			<h3>
-				<div>
-					<a href="">Post Title</a>
-					<br/>
-				</div>
-			</h3>
-			<h4>
-				<div>
-					<a href="">Category</a>
-				</div>
-			</h4>
-			<p class="lead">by: Name Here</p>
-
-			<p><span class="glyphicon glyphicon-time"> Date Here <!--</span> <?php echo $b["date_posted"]; ?> --></p>
-			<hr>
-		</div>
+		<?php
+			foreach($Categories->getAll() as $c) {
+				foreach($BlogPosts->getAllFromCategoryId($c["id"], 1) as $b) {
+					$u = $Users->get($b["user_id"]);
+					blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
+				}
+			}
+		?>
 	</div>
     
     
