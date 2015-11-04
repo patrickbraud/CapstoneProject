@@ -27,7 +27,9 @@
 				foreach ($posts as $b) {
 					$user = $Users->get($b["user_id"]);
 					$ans = $b["correctAnswerId"] > 0;
-					blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans);
+					$opened = $b["marked"] == 0;
+					if($opened || $page->isAdmin($Role))
+						blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans, $opened);
 				}
 			} else {
 		?>

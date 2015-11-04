@@ -21,15 +21,19 @@ if(isset($_POST["search_submit"])) {
         foreach($BlogPosts->like($value, "post") as $r) {
             $u = $Users->get($r["user_id"]);
             $cname = $Categories->get($r["category"])["name"];
-            $ans = $b["correctAnswerId"] > 0;
-            blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans);
+            $ans = $r["correctAnswerId"] > 0;
+            $opened = $r["marked"] == 0;
+            if($opened || $page->isAdmin($Role))
+                blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
         }
 
         foreach($BlogPosts->like($value, "title") as $r) {
             $u = $Users->get($r["user_id"]);
             $cname = $Categories->get($r["category"])["name"];
-            $ans = $b["correctAnswerId"] > 0;
-            blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans);
+            $ans = $r["correctAnswerId"] > 0;
+            $opened = $r["marked"] == 0;
+            if($opened || $page->isAdmin($Role))
+                blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
         }
 
 
