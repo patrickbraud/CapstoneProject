@@ -10,18 +10,18 @@
 		?>
 
 		<div class="container col-md-12">
-			<div class="panel panel-default col-md-offset-4 col-md-4">
-				<div class="panel-body text-center">
-					<h2><?php echo $c["name"]; ?></h2>
-				</div>
+			<div class="panel-body text-center">
+				<h2><?php echo $c["name"]; ?></h2>
 			</div>
 		</div>
 
-		<div class="container col-md-6">
+		<div class="container col-md-12">
 			<?php  if($page->isAuth()) { ?>
-				<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</a>
-				<br/>
+					<button type="button button" class="btn btn-default pull-right" href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</button>
 			<?php } ?>
+		</div>
+
+		<div class="container col-md-6">
 		<?php
 			$posts = $BlogPosts->getAllFromCategoryId($id);
 			if(count($posts) > 0) {
@@ -34,7 +34,7 @@
 				}
 			} else {
 		?>
-			<div class="panel">
+			<div class="panel panel-default">
 				<div class="panel-body text-center">
 					<div class="row">
 						<p>There are no posts here.</p>
