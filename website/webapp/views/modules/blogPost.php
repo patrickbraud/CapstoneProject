@@ -2,6 +2,7 @@
     <div class="row">
         <h3>
             <div>
+                <p><span class="glyphicon glyphicon-check" style="color:green"></span> <?php echo $date; ?></p>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
         </h3>
@@ -17,6 +18,7 @@
     <div class="row">
         <h3>
             <div>
+                <p><span class="glyphicon glyphicon-check" style="color:green"></span> <?php echo $date; ?></p>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
         </h3>
