@@ -3,32 +3,45 @@
 $page = new Page("Search Results", $SessionPerson);
 
 $page->getModule("blogPost");
-$page->getModule("categories");
 $page->showHeader();
 
+$page->getModule("categories");
+
 if(isset($_POST["search_submit"])) {
-    $value = $_POST["search"];
+    $value = $_POST["search"]; 
+    ?>
+    <div class="container col-md-12"> 
+        <div class="panel-body text-center">
+            <?php echo '<h2>Showing Results for '.$value.'</h2>'; ?>
+        </div>
+    </div>
+    <?php ListCategories($Categories); ?>
+    <div class="container col-md-6">
+        <?php
+        foreach($BlogPosts->like($value, "post") as $r) {
+            $u = $Users->get($r["user_id"]);
+            $cname = $Categories->get($r["category"])["name"];
+            blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname);
+        }
 
-    echo '<h2>Showing Results for '.$value.'</h2>';
-    foreach($BlogPosts->like($value, "post") as $r) {
-        $u = $Users->get($r["user_id"]);
-        $cname = $Categories->get($r["category"])["name"];
-        blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname);
+        foreach($BlogPosts->like($value, "title") as $r) {
+            $u = $Users->get($r["user_id"]);
+            $cname = $Categories->get($r["category"])["name"];
+            blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname);
+        }
+
+
+
+
+
+    } else {
+        echo "Nothing to show.";
     }
+    ?>
+    </div>
 
-    foreach($BlogPosts->like($value, "title") as $r) {
-        $u = $Users->get($r["user_id"]);
-        $cname = $Categories->get($r["category"])["name"];
-        blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname);
-    }
+<?php
 
-
-
-
-
-} else {
-    echo "Nothing to show.";
-}
 $page->showFooter();
 
 ?>
