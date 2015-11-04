@@ -34,7 +34,7 @@
 			} else {
 		?>
 				<div class="row">
-					<p>There is no post here.</p>
+					<p>There are no posts here.</p>
 				</div>
 		<?php
 			}
