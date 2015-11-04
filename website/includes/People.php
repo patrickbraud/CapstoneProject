@@ -125,7 +125,7 @@ class People {
         return $this->changeValue($id, "roleId", $roleId);
     }
     public function changePoints($id, $points) {
-        return $this->changeValue($id, "points", (string)$points);
+        return $this->changeValue($id, "points", $points);
     }
 //    public function addPoints($id, $points) {
 //        return $this->changePoints($id, $this->getPoints($id) + $points);

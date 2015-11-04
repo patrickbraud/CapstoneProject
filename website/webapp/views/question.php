@@ -1,5 +1,6 @@
 <?php
     $page = new Page("", $SessionPerson);
+
     if($page->getQuery("id") != NULL) {
         $id = $page->getQuery("id");
         $post = $BlogPosts->get($id);
@@ -62,7 +63,7 @@
         <?php
                 }
             }
-            if(!$hasAnswer) {
+            if(!$hasAnswer && $SessionPerson->isAuth()) {
         ?>
             <form action="<?php echo $page->currentURL(); ?>" method="post">
 

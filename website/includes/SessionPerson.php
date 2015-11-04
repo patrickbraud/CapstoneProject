@@ -86,7 +86,7 @@ class SessionPerson extends Person {
         if($this->exists("LOGIN-points"))
             return $this->getVariable("LOGIN-points");
         else{
-            $id = parent::role();
+            $id = parent::points();
             $this->addVariable("LOGIN-points", $id);
             return $id;
         }
@@ -143,10 +143,14 @@ class SessionPerson extends Person {
         }
     }
     public function addPoints($points) {
-        return $this->updatePoints($this->points() + $points);
+        $p = $this->points() + $points;
+        return $this->updatePoints($p);
     }
-    public function removePoints($points) {
-        return $this->updatePoints($this->points() - $points);
+    public function removePoints($num) {
+        $p = $this->points() - QUESTION_POINTS;
+ //WHYYYY???
+
+        return $this->updatePoints($p);
     }
     //edit info function
     public function editInfo($id, $current_values, $email, $first_name, $last_name, $password_A, $password_B){

@@ -11,10 +11,12 @@
 		$now = date("o-m-d");
 
 		$BlogPosts->add($title, $body, 0, $id, $userId, $now, 0);
-		$SessionPerson->removePoints($userId, QUESTION_POINTS);
+		$p =  QUESTION_POINTS;
+		$SessionPerson->removePoints($userId, 10);
 		$page->addQuery("id", $id);
 		$page->changeQuery("page", "category_questions");
 		$page->redirect();
+		exit;
 	} else {
 		$page->showHeader();
 		if($People->getPoints($userId) >= QUESTION_POINTS) {
