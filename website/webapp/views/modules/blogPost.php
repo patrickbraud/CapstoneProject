@@ -3,9 +3,9 @@
         <h3>
             <div>
                 <?php if($answered)
-                    echo '<span class="glyphicon glyphicon-check" style="color:green"></span>';
+                    echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
                  if(!$isOpen)
-                  echo "put red X here";
+                  echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
                 ?>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
@@ -23,9 +23,9 @@
         <h3>
             <div>
                <?php if($answered)
-                    echo '<span class="glyphicon glyphicon-check" style="color:green"></span>';
+                    echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
                if(!$isOpen)
-                   echo "put red X here";
+                   echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
                ?>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
