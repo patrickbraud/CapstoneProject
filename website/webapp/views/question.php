@@ -26,10 +26,15 @@
             $page->showHeader();
 
     ?>
+    <div class="container col-md-12">
+        <div class="panel-body text-center">
+            <h3><?php echo $post["title"]; ?></h3>
+        </div>
+    </div>
+
 
     <?php listCategories($Categories); ?>
         <div class = "container col-md-8">
-            <h3><?php echo $post["title"]; ?></h3>
             <?php if($page->isAdmin($Role)) {
                 if($post["marked"] == 0) { ?>
                     <a href="?page=postFunctions&prefix=admin&func=closePost&postId=<?php echo $id; ?>&ref=question">Close Post</a>

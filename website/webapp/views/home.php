@@ -12,10 +12,8 @@
 ?>
     
   	<div class="container col-md-12">
-		<div class="panel panel-default col-md-offset-4 col-md-4">
-			<div class="panel-body text-center">
-				<h2><?php echo $page->getTitle(); ?></h2>
-			</div>
+		<div class="panel-body text-center">
+			<h2><?php echo $page->getTitle(); ?></h2>
 		</div>
 	</div>
 
