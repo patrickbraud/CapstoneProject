@@ -36,10 +36,6 @@ if(isset($_POST["search_submit"])) {
                 blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
         }
 
-
-
-
-
     } else {
         echo "Nothing to show.";
     }

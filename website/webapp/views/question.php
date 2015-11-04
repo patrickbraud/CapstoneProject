@@ -1,6 +1,5 @@
 <?php
     $page = new Page("", $SessionPerson);
-
     $page->getModule("categories");
 
     if($page->getQuery("id") != NULL) {
@@ -25,6 +24,7 @@
         } else {
             $page->setTitle($post["title"]);
             $page->showHeader();
+
     ?>
 
     <?php listCategories($Categories); ?>
@@ -53,6 +53,7 @@
                 foreach($Answers->getAllForBlogPost($page->getQuery("id")) as $a) {
                     $userA = $Users->get($a["user_id"]);
         ?>
+                    <div class = "container col-md-8">
                     <div class="panel
                     <?php
                         if($hasAnswer && $a["id"] == $post["correctAnswerId"]) echo "panel-success";
@@ -70,7 +71,7 @@
                         </div>
                     </div>
                     <div class="panel-body"><?php echo $a["post"]; ?></div>
-                    </div>
+                    </div></div>
         <?php
                 }
             }
