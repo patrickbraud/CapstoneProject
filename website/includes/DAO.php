@@ -21,4 +21,7 @@ class DAO {
         $this->db->execute("SELECT * FROM ".$this->table)->fetchAll();;
         $this->db->numRows();
     }
+    function like($term, $column) {
+        return $this->db->execute("SELECT * FROM ".$this->table." WHERE ".$column." LIKE '%$term%'")->fetchAll();
+    }
 }

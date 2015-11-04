@@ -5,12 +5,16 @@
     if($page->isAdmin($Role)) {
        echo "<a href=".$page->link("home", "admin").">Admin Panel</a>";
     }
+
+    /*
+    * TODO: get the two newest posts from each category..
+    */
 ?>
     
   	<div class="container col-md-12">
 		<div class="panel panel-default col-md-offset-4 col-md-4">
 			<div class="panel-body text-center">
-				<h2>Home Page Title Here</h2>
+				<h2><?php echo $page->getTitle(); ?></h2>
 			</div>
 		</div>
 	</div>
