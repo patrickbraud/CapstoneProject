@@ -20,6 +20,7 @@
 		<div class="container col-md-6">
 			<?php  if($page->isAuth()) { ?>
 				<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post</a>
+				<br/>
 			<?php } ?>
 		<?php
 			$posts = $BlogPosts->getAllFromCategoryId($id);
@@ -33,9 +34,13 @@
 				}
 			} else {
 		?>
-				<div class="row">
-					<p>There are no posts here.</p>
+			<div class="panel">
+				<div class="panel-body text-center">
+					<div class="row">
+						<p>There are no posts here.</p>
+					</div>
 				</div>
+			</div>
 		<?php
 			}
 		?>
