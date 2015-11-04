@@ -2,12 +2,13 @@
     <div class="row">
         <h3>
             <div>
+                <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a>
                 <?php if($answered)
                     echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
                  if(!$isOpen)
                   echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
                 ?>
-                <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
+                <br/>
             </div>
         </h3>
         <p class="lead">by <?php echo $userFirst." ".$userLast; ?></p>
@@ -22,12 +23,13 @@
     <div class="row">
         <h3>
             <div>
-               <?php if($answered)
+                <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a>
+                <?php if($answered)
                     echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
                if(!$isOpen)
                    echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
                ?>
-                <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
+                 <br/>
             </div>
         </h3>
         <h4>
