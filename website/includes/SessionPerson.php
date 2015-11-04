@@ -146,10 +146,8 @@ class SessionPerson extends Person {
         $p = $this->points() + $points;
         return $this->updatePoints($p);
     }
-    public function removePoints($num) {
-        $p = $this->points() - QUESTION_POINTS;
- //WHYYYY???
-
+    public function removePoints($points) {
+        $p = $this->points() - $points;//WHYYYY???
         return $this->updatePoints($p);
     }
     //edit info function

@@ -127,12 +127,12 @@ class People {
     public function changePoints($id, $points) {
         return $this->changeValue($id, "points", $points);
     }
-//    public function addPoints($id, $points) {
-//        return $this->changePoints($id, $this->getPoints($id) + $points);
-//    }
-//    public function removePoints($id, $points) {
-//        return $this->changePoints($id, $this->getPoints($id) - $points);
-//    }
+    public function addPoint($id, $points) {
+        return $this->changePoints($id, $this->getPoints($id) + $points);
+    }
+    public function removePoint($id, $points) {
+        return $this->changePoints($id, $this->getPoints($id) - $points);
+    }
     //This function (below) checks for valid inputs, if not adds the error to an array, or if so, adds to a value array
     //If there are no errors, then add the data to the database and returns the value array and error array in an array..
     public function register($email, $first_name, $last_name, $password_A, $password_B){

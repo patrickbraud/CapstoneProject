@@ -12,7 +12,7 @@
 
 		$BlogPosts->add($title, $body, 0, $id, $userId, $now, 0);
 		$p =  QUESTION_POINTS;
-		$SessionPerson->removePoints($userId, 10);
+		$SessionPerson->removePoints(QUESTION_POINTS);
 		$page->addQuery("id", $id);
 		$page->changeQuery("page", "category_questions");
 		$page->redirect();
