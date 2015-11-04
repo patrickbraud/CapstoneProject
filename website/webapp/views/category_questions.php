@@ -26,7 +26,8 @@
 			if(count($posts) > 0) {
 				foreach ($posts as $b) {
 					$user = $Users->get($b["user_id"]);
-					blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"]);
+					$ans = $b["correctAnswerId"] > 0;
+					blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans);
 				}
 			} else {
 		?>

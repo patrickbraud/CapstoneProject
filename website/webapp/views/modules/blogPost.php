@@ -1,8 +1,10 @@
-<?php function blogPost($blogPostId, $title, $userFirst, $userLast, $date) { ?>
+<?php function blogPost($blogPostId, $title, $userFirst, $userLast, $date, $answered = false) { ?>
     <div class="row">
         <h3>
             <div>
-                <span class="glyphicon glyphicon-check" style="color:green"></span>
+                <?php if($answered)
+                    echo '<span class="glyphicon glyphicon-check" style="color:green"></span>';
+                ?>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
         </h3>
@@ -14,11 +16,13 @@
 
 <?php } ?>
 
-<?php function blogPostWithCategory($blogPostId, $title, $userFirst, $userLast, $date, $categoryId, $categoryName) { ?>
+<?php function blogPostWithCategory($blogPostId, $title, $userFirst, $userLast, $date, $categoryId, $categoryName, $answered = false) { ?>
     <div class="row">
         <h3>
             <div>
-                <span class="glyphicon glyphicon-check" style="color:green"></span>
+               <?php if($answered)
+                    echo '<span class="glyphicon glyphicon-check" style="color:green"></span>';
+               ?>
                 <a href="?page=question&id=<?php echo $blogPostId; ?>"><?php echo $title; ?></a> <br/>
             </div>
         </h3>

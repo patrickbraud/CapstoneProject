@@ -28,7 +28,8 @@
 			foreach($Categories->getAll() as $c) {
 				foreach($BlogPosts->getAllFromCategoryId($c["id"], 1) as $b) {
 					$u = $Users->get($b["user_id"]);
-					blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
+					$ans = $b["correctAnswerId"] > 0;
+					blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"], $ans);
 				}
 			}
 		?>

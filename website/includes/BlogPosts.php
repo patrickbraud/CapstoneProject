@@ -1,6 +1,6 @@
 <?php
 
-class BlogPosts extends DAO{
+class BlogPosts extends DAO {
 
     function __construct($db) {
         parent::__construct($db, TBL_BLOG_POSTS);
@@ -39,6 +39,14 @@ class BlogPosts extends DAO{
 
     function markAnswer($id, $markId) {
         $this->db->update($this->table, "correctAnswerId = '".$markId."'", "id = '".$id."'");
+    }
+
+    function movePost($id, $newCategoryId) {
+        $this->db->update($this->table, "category = '".$newCategoryId."'", "id = '".$id."'");
+    }
+
+    function close($id) {
+        $this->db->update($this->table, "marked = '1'", "id = '".$id."'");
     }
 
 }

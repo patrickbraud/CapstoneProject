@@ -26,6 +26,10 @@
     ?>
         <div class = "container col-md-12">
             <h3><?php echo $post["title"]; ?></h3>
+            <?php if($page->isAdmin($Role)) { ?>
+                <a href="#">Move Post</a> or <a href="#">Close Post</a>
+            <?php } ?>
+
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
