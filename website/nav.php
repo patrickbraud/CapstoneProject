@@ -27,11 +27,11 @@
                  -->
 				<li>
 
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-left" role="search" method="post" action="?page=search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search">
+							<input type="text" id="search" name="search" class="form-control" placeholder="Search">
 						</div>
-						<button type="submit" class="btn btn-default">Go!</button>
+						<input type="submit" id="search_submit" name="search_submit" value="Go!" />
 					</form>
 				</li>
 				<ul class="nav navbar-nav">
