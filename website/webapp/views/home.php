@@ -31,7 +31,7 @@
 			foreach($Categories->getAll() as $c) {
 				foreach($BlogPosts->getAllFromCategoryId($c["id"], 1) as $b) {
 					$u = $Users->get($b["user_id"]);
-					orm($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
+					blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"]);
 				}
 			}
 		?>
