@@ -26,8 +26,12 @@
     ?>
         <div class = "container col-md-12">
             <h3><?php echo $post["title"]; ?></h3>
-            <?php if($page->isAdmin($Role)) { ?>
-                <a href="#">Move Post</a> or <a href="#">Close Post</a>
+            <?php if($page->isAdmin($Role)) {
+                if($post["marked"] == 0) { ?>
+                    <a href="?page=postFunctions&prefix=admin&func=closePost&postId=<?php echo $id; ?>&ref=question">Close Post</a>
+                <?php } else { ?>
+                    <a href="?page=postFunctions&prefix=admin&func=openPost&postId=<?php echo $id; ?>&ref=question">Open Post</a>
+                <?php } ?>
             <?php } ?>
 
             <div class="panel panel-primary">

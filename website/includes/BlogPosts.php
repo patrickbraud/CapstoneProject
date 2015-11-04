@@ -21,10 +21,12 @@ class BlogPosts extends DAO {
         );
     }
 
-    function getAllFromCategoryId($categoryId, $limit = 0) {
+    function getAllFromCategoryId($categoryId, $limit = 0, $offset = 0) {
         $q = "SELECT * FROM ".$this->table." WHERE category = '".$categoryId."' ORDER BY id DESC";
         if($limit > 0)
             $q = $q." LIMIT $limit";
+        if($offset > 0)
+            $q = $q." OFFSET $offset";
 
         return $this->db->execute($q)->fetchAll();
     }
@@ -46,7 +48,11 @@ class BlogPosts extends DAO {
     }
 
     function close($id) {
-        $this->db->update($this->table, "marked = '1'", "id = '".$id."'");
+       $this->db->update($this->table, "marked = '1'", "id = '".$id."'");
+    }
+
+    function open($id) {
+        $this->db->update($this->table, "marked = '0'", "id = '".$id."'");
     }
 
 }
