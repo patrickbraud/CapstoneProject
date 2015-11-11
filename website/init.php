@@ -23,6 +23,7 @@
     addInclude("Answers");
     addInclude("Users");
     addInclude("Role");
+    addInclude("UserAvatar");
 
     $DB = new Database(DB_HOST, DB_USER, DB_PASS, DB_DB);
     $People = new People($DB);

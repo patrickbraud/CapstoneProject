@@ -42,7 +42,10 @@
 
 		<div class="container col-md-8">
 			<div class="panel-body text-center">
-				<img src="Tech_Logo.png" alt="" width="80" height="80">
+				<?php
+					$ua = new UserAvatar($id);
+					echo $ua->getImage(80, 80);
+				?>
 				<br/>
 				<form method="post" enctype="multipart/form-data">
 					<input type="file" name="avatar" id="avatar" value="Upload Avatar" />

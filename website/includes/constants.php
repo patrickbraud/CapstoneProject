@@ -6,6 +6,8 @@ define("PROJECT_AUTHORS", "James Little, Jason Webb, Patrick Braud, and Randall 
 define("PAGE_FOOTER", "Copyright &copy; ".PROJECT_NAME." 2015");
 define("ITEMS_PER_PAGE", 10);
 
+define("ICONS_DIR", "user_icons/");
+
 /* POINTS */
 define("STARTING_POINTS", 100);
 define("QUESTION_POINTS", 10);
