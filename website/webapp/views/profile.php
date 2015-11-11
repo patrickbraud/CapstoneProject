@@ -47,7 +47,7 @@
 			<div class="panel-body text-center">
 				<?php
 					$ua = new UserAvatar($id);
-					echo $ua->getImage(80, 80);
+					echo $ua->getImage(120, 120);
 				?>
 				<br/>
 				<form action="?page=profile&sent=true"method="post" enctype="multipart/form-data">

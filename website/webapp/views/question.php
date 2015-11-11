@@ -47,7 +47,15 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
-                    <div class="col-sm-6"><a href="?page=profile&id=<?php echo $user["id"]; ?>" style="color: rgb(255,255,255)"><?php echo $user["first_name"]." ".$user["last_name"]; ?></a></div>
+                    <div class="col-sm-6">
+                        <?php
+                        $ua = new UserAvatar($user["id"]);
+                        echo $ua->getImage(30, 30) . " "; ?>
+                        <a href="?page=profile&id=<?php echo $user["id"]; ?>" style="color: rgb(255,255,255)">
+                            <?php 
+                            echo $user["first_name"]." ".$user["last_name"];?>
+                        </a>
+                    </div>
                     <div class="col-sm-6 text-right"><?php echo $post["date_posted"]; ?></div>
                 </div>
                 </div>
@@ -68,6 +76,8 @@
                         <div class="panel-heading">
                         <div class="row">
                             <div class="col-sm-6">
+                                <?php $ua = new UserAvatar($user["id"]);
+                                echo $ua->getImage(30, 30); ?>
                                 <a href="?page=profile&id=<?php echo $userA["id"]; ?>"><?php echo $userA["first_name"]." ".$userA["last_name"]; ?></a>
                                 <?php if($BlogPosts->isPoster($id, $SessionPerson->id()) && !$hasAnswer) { ?>
                                     [<a href="<?php echo $page->currentURL()."&mark=".$a["id"]; ?>">Mark as Answer</a>]
