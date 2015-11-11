@@ -35,7 +35,7 @@ if(isset($_POST["search_submit"])) {
             $ans = $r["correctAnswerId"] > 0;
             $opened = $r["marked"] == 0;
             if ($opened || $page->isAdmin($Role))
-                blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
+                blogPostWithCategory($r["id"], $r["title"], $u["id"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
         }
 
         foreach ($BlogPosts->like($value, "title") as $r) {
@@ -44,7 +44,7 @@ if(isset($_POST["search_submit"])) {
             $ans = $r["correctAnswerId"] > 0;
             $opened = $r["marked"] == 0;
             if ($opened || $page->isAdmin($Role))
-                blogPostWithCategory($r["id"], $r["title"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
+                blogPostWithCategory($r["id"], $r["title"], $u["id"], $u["first_name"], $u["last_name"], $r["date_posted"], $r["category"], $cname, $ans, $opened);
         }
     } else {
         echo $noResults;
