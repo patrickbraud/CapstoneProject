@@ -25,39 +25,57 @@
 <?php
     listCategories($Categories);
 ?>
+<div class="container col-md-8">
+	<div class="row">
+	    <h3>
+	       	<div>
+	            Post Title
+	            <?php if($answered)
+	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
+	                if(!$isOpen)
+	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
+	            ?>
+	            <br/>
+	        </div>
+	    </h3>
+	   	<p class="lead">by First Last</p>
+	    <p><span class="glyphicon glyphicon-time"></span> date</p>
+	    <hr>
+	</div>
 
-<div class="row">
-    <h3>
-       	<div>
-            Post Title
-            <?php if($answered)
-                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
-                if(!$isOpen)
-                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
-            ?>
-            <br/>
-        </div>
-    </h3>
-   	<p class="lead">by First Last</p>
-    <p><span class="glyphicon glyphicon-time"></span> date</p>
-    <hr>
-</div>
+	<div class="row">
+	    <h3>
+	       	<div>
+	            Post Title
+	            <?php if($answered)
+	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
+	                if(!$isOpen)
+	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
+	            ?>
+	            <br/>
+	        </div>
+	    </h3>
+	   	<p class="lead">by First Last</p>
+	    <p><span class="glyphicon glyphicon-time"></span> date</p>
+	    <hr>
+	</div>
 
-<div class="row">
-    <h3>
-       	<div>
-            Post Title
-            <?php if($answered)
-                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
-                if(!$isOpen)
-                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
-            ?>
-            <br/>
-        </div>
-    </h3>
-   	<p class="lead">by First Last</p>
-    <p><span class="glyphicon glyphicon-time"></span> date</p>
-    <hr>
+	<div class="row">
+	    <h3>
+	       	<div>
+	            Post Title
+	            <?php if($answered)
+	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
+	                if(!$isOpen)
+	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
+	            ?>
+	            <br/>
+	        </div>
+	    </h3>
+	   	<p class="lead">by First Last</p>
+	    <p><span class="glyphicon glyphicon-time"></span> date</p>
+	    <hr>
+	</div>
 </div>
 
 
