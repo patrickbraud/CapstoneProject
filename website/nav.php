@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" style="top: -5"><img src="Tech_Logo.png" width="30" height="30" alt=""></a>
+            <a class="navbar-brand" href="#" style=""><img src="Tech_Logo.png" width="30" height="30" alt=""></a>
             <a class="navbar-brand" href="#"><?php echo PROJECT_NAME; ?></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
