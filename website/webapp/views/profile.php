@@ -10,7 +10,8 @@
   	<div class="container col-md-8">
 		<div class="panel-body text-center">
 			<img src="Tech_Logo.png" alt="" width="80" height="80">
-			<h2>Patrick Braud | 1200</h2>
+			<br /><a href="#">Change Profile Picture?</a>
+			<h2>Patrick Braud | 1200 </h2>
 			<h3>patrick.braud@ttu.edu</h3>
 		</div>
 	</div>
