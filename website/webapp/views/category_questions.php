@@ -42,7 +42,7 @@
 					$ans = $b["correctAnswerId"] > 0;
 					$opened = $b["marked"] == 0;
 					if($opened || $page->isAdmin($Role))
-						blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans, $opened);
+						blogPost($b["id"], $b["title"], $user["id"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans, $opened);
 				}
 				pagination($number, $count, $page);
 			} else {

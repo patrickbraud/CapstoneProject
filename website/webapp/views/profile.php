@@ -57,7 +57,7 @@
 				$ans = $b["correctAnswerId"] > 0;
 				$opened = $b["marked"] == 0;
 				if ($opened || $page->isAdmin($Role))
-					blogPostWithCategory($b["id"], $b["title"], $firstName, $lastName, $b["date_posted"], $b["category"], $categoryName, $ans, $opened);
+					blogPostWithCategory($b["id"], $b["title"], $id, $firstName, $lastName, $b["date_posted"], $b["category"], $categoryName, $ans, $opened);
 			}
 			pagination($number, $count, $page);
 		} else {

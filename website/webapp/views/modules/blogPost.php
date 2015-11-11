@@ -1,4 +1,4 @@
-<?php function blogPost($blogPostId, $title, $userFirst, $userLast, $date, $answered = false, $isOpen = true) { ?>
+<?php function blogPost($blogPostId, $title, $userId, $userFirst, $userLast, $date, $answered = false, $isOpen = true) { ?>
     <div class="row">
         <h3>
             <div>
@@ -11,7 +11,7 @@
                 <br/>
             </div>
         </h3>
-        <p>by <?php echo $userFirst." ".$userLast; ?></p>
+        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast; ?></a></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>
@@ -19,7 +19,7 @@
 
 <?php } ?>
 
-<?php function blogPostWithCategory($blogPostId, $title, $userFirst, $userLast, $date, $categoryId, $categoryName, $answered = false, $isOpen = true) { ?>
+<?php function blogPostWithCategory($blogPostId, $title, $userId, $userFirst, $userLast, $date, $categoryId, $categoryName, $answered = false, $isOpen = true) { ?>
     <div class="row">
         <h3>
             <div>
@@ -35,7 +35,7 @@
         <h4>
             <a href="?page=category_questions&id=<?php echo $categoryId; ?>"><?php echo $categoryName; ?></a>
         </h4>
-        <p>by <?php echo $userFirst." ".$userLast; ?></p>
+        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast; ?></a></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>

@@ -30,7 +30,7 @@
 					$ans = $b["correctAnswerId"] > 0;
 					$opened = $b["marked"] == 0;
 					if($b["marked"] == 0 || $page->isAdmin($Role))
-						blogPostWithCategory($b["id"], $b["title"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"], $ans, $opened);
+						blogPostWithCategory($b["id"], $b["title"], $u["id"], $u["first_name"], $u["last_name"], $b["date_posted"], $c["id"], $c["name"], $ans, $opened);
 				}
 			}
 		?>
