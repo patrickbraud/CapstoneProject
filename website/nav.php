@@ -21,11 +21,6 @@
                 <li>
                     <a href="?page=contacts">Contact</a>
                 </li>
-                <!-- ONLY show this button if logged in
-                <li>
-                    <a href="#">My Account</a>
-                </li>
-                 -->
 				<li>
 
 					<form class="navbar-form navbar-left" role="search" method="post" action="?page=search">

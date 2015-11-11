@@ -44,16 +44,18 @@ if(isset($_POST["submit"]) && $page->getQuery("sent")) {
 
 
 	<div class="container col-md-8">
-		<div class="panel-body text-center">
+		<div class="panel-body text-center col-md-offset-6">
 			<?php
 			$ua = new UserAvatar($id);
-			echo $ua->getImage(120, 120);
+			echo $ua->getImage(140, 140);
 			?>
 			<br/>
-			<form action="?page=profile&sent=true"method="post" enctype="multipart/form-data">
-				<input type="file" name="avatar" id="avatar" value="Upload Avatar" />
-				<input type="submit" name="submit" id="submit" value="Upload" />
+			
+			<form action="?page=profile&sent=true" method="post" enctype="multipart/form-data">
+				<input type="file" name="avatar" id="avatar" value="Upload Avatar"/>
+				<input type="submit" name="submit" id="submit" value="Upload"/>
 			</form>
+			
 
 			<h2><?php echo $firstName . " " . $lastName; ?> : <?php echo $points; ?> </h2>
 
@@ -65,7 +67,7 @@ if(isset($_POST["submit"]) && $page->getQuery("sent")) {
 	listCategories($Categories);
 	?>
 
-	<div class="container col-md-8">
+	<div class="container col-md-8 col-md-offset-2">
 		<?php
 		$posts = $BlogPosts->getAllForUser($id, ITEMS_PER_PAGE, $offset);
 		$count = count($posts);
