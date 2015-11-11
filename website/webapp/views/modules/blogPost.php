@@ -11,7 +11,7 @@
                 <br/>
             </div>
         </h3>
-        <p class="lead">by <?php echo $userFirst." ".$userLast; ?></p>
+        <p>by <?php echo $userFirst." ".$userLast; ?></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>
@@ -33,11 +33,9 @@
             </div>
         </h3>
         <h4>
-            <div>
-                <a href="?page=category_questions&id=<?php echo $categoryId; ?>"><?php echo $categoryName; ?></a>
-            </div>
+            <a href="?page=category_questions&id=<?php echo $categoryId; ?>"><?php echo $categoryName; ?></a>
         </h4>
-        <p class="lead">by <?php echo $userFirst." ".$userLast; ?></p>
+        <p>by <?php echo $userFirst." ".$userLast; ?></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>
