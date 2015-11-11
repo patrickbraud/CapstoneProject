@@ -76,7 +76,7 @@
                         <div class="panel-heading">
                         <div class="row">
                             <div class="col-sm-6">
-                                <?php $ua = new UserAvatar($user["id"]);
+                                <?php $ua = new UserAvatar($a["user_id"]);
                                 echo $ua->getImage(30, 30); ?>
                                 <a href="?page=profile&id=<?php echo $userA["id"]; ?>"><?php echo $userA["first_name"]." ".$userA["last_name"]; ?></a>
                                 <?php if($BlogPosts->isPoster($id, $SessionPerson->id()) && !$hasAnswer) { ?>
