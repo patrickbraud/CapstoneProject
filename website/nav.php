@@ -9,8 +9,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" style=""><img src="Tech_Logo.png" width="30" height="30" alt=""></a>
-            <a class="navbar-brand" href="#"><?php echo PROJECT_NAME; ?></a>
+            <a class="navbar-brand" href="#" style=""><img src="Tech_Logo.png" width="20" height="20" alt=""></a>
+            <a class="navbar-brand" href="?page=home"><?php echo PROJECT_NAME; ?></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,7 +37,7 @@
 				</li>
 				<ul class="nav navbar-nav">
                     <?php if($this->isAuth()) { //If logged in ?>
-                            <li><a href="?page=home">Welcome <?php echo $this->person->fullName(); ?> (<?php echo $this->person->points(); ?>)</a></li>
+                            <li><a href="?page=home"><img src="Tech_Logo.png" width="20" height="20" alt=""> Welcome <?php echo $this->person->fullName(); ?> (<?php echo $this->person->points(); ?>)</a></li>
                             <li><a href="?page=logout">Logout</a></li>
                    <?php  } else { // not Logged in ?>
                         <li><a href="?page=login">Sign In</a></li>
