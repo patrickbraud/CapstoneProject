@@ -3,25 +3,25 @@
 	$page->getModule("categories");
 	$page->getModule("blogPost");
 	$page->getModule("pagination");
-
+?>
+	<div class="container col-md-12">
+		<div class="panel-body">
+			<h1/>
+		</div>
+	</div>
+<?php
 	if(isset($_POST["submit"])) {
 		//upload dat picture.
 		print_r($_POST);
-
 	} else {
-
 		$id = $page->getQuery("id");
 		$points = 0;
 		$email = "";
 		$firstName = "";
 		$lastName = "";
-
 		$number = $page->getQuery("number");
 		if (!isset($number)) $number = 1;
-
 		$offset = calcOffset($number);
-
-
 		if (!is_null($id)) { //Look up user
 			$u = $Users->get($id);
 			$firstName = $u["first_name"];
@@ -35,8 +35,6 @@
 			$points = $SessionPerson->points();
 			$email = $SessionPerson->email();
 		}
-
-<<<<<<< Updated upstream
 		$page->showHeader();
 		?>
 
@@ -53,17 +51,9 @@
 				<h2><?php echo $firstName . " " . $lastName; ?> : <?php echo $points; ?> </h2>
 
 				<h3><?php echo $email; ?></h3>
+
+				<br/>
 			</div>
-=======
-    
-  	<div class="container col-md-8">
-		<div class="panel-body text-center">
-			<img src="Tech_Logo.png" alt="" width="80" height="80">
-			<br /><a href="#">Change Profile Picture?</a>
-			<h2><?php echo $firstName." ".$lastName; ?> : <?php echo $points; ?> </h2>
-			<h3><?php echo $email; ?></h3>
-			<br/>
->>>>>>> Stashed changes
 		</div>
 
 		<?php
@@ -93,7 +83,6 @@
 					</div>
 				</div>
 				<?php
-
 			}
 			?>
 		</div>
