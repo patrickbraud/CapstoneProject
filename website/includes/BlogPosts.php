@@ -31,6 +31,16 @@ class BlogPosts extends DAO {
         return $this->db->execute($q)->fetchAll();
     }
 
+    function getAllForUser($userId, $limit = 0, $offset = 0) {
+        $q = "SELECT * FROM ".$this->table." WHERE user_id = '".$userId."' ORDER BY id DESC";
+        if($limit > 0)
+            $q = $q." LIMIT $limit";
+        if($offset > 0)
+            $q = $q." OFFSET $offset";
+
+        return $this->db->execute($q)->fetchAll();
+    }
+
     function hasAnswer($id) {
         return $this->get($id)["correctAnswerId"] > 0;
     }
