@@ -155,10 +155,16 @@ h3{
 }
 h4{
     padding: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+h5{
+    padding: 0px;
+    margin: 0px;
 }
 
 hr {
     border-color: rgba(34, 35, 36, 0.25); /* Looks Legit */
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
