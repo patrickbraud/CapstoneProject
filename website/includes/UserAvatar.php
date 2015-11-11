@@ -8,7 +8,7 @@ class UserAvatar {
     }
 
     function getUrl() {
-        $p = ICONS_DIR.$this->userId.".gif";
+        $p = ICONS_DIR.$this->userId.".png";
         if(!file_exists($p)) $p = $this->default;
         return $p;
     }

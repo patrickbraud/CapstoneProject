@@ -24,8 +24,8 @@
 			unset($_POST);
 			$page->redirect($page->currentURL());
 		} else {
-			$page->showHeader();
-			echo "User Added. Please Log in.";
+			$page->changeQuery("page", "login");
+			$page->redirect();
 		}
 
 	} else {
