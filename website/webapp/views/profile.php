@@ -1,4 +1,5 @@
 <?php
+	ob_start();
     $page = new Page("Home", $SessionPerson);
 	$page->getModule("categories");
 	$page->getModule("blogPost");
@@ -31,14 +32,11 @@
 		$email = $SessionPerson->email();
 	}
 
-	if(isset($_POST["submit"]) && $page->getQuery("sent") == true) {
-		$fileName = $id."png";
-		if(move_uploaded_file($_FILES['avatar']['tmp_name'], ICONS_DIR.".".$fileName)) {
-			echo "uploaded.";
-		} else {
-			echo "failed";
-		}
-		print_r($_FILES);
+	if(isset($_POST["submit"]) && $page->getQuery("sent")) {
+		$fileName = $id.".png";
+		move_uploaded_file($_FILES['avatar']['tmp_name'], ICONS_DIR.$fileName);
+		$page->removeQuery("sent");
+		$page->redirect();
 	} else {
 
 			$page->showHeader();
