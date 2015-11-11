@@ -50,13 +50,14 @@ if(isset($_POST["submit"]) && $page->getQuery("sent")) {
 			echo $ua->getImage(140, 140);
 			?>
 			<br/>
-			
-			<form action="?page=profile&sent=true" method="post" enctype="multipart/form-data">
-				<br/>
-				<input type="file" name="avatar" id="avatar" value="Upload Avatar" class="col-md-offset-4"/>
-				<br/>
-				<input type="submit" name="submit" id="submit" value="Upload"/>
-			</form>
+			<?php if($id == $SessionPerson->id()) { ?>
+				<form action="?page=profile&sent=true" method="post" enctype="multipart/form-data">
+					<br/>
+					<input type="file" name="avatar" id="avatar" value="Upload Avatar" class="col-md-offset-4"/>
+					<br/>
+					<input type="submit" name="submit" id="submit" value="Upload"/>
+				</form>
+			<?php } ?>
 			
 
 			<h2><?php echo $firstName . " " . $lastName; ?> : <?php echo $points; ?> </h2>
