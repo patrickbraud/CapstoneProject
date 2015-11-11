@@ -16,7 +16,7 @@
 		<div class="panel-body text-center">
 			<!-- <h2><?php echo $page->getTitle(); ?></h2> -->
 			<img src="Tech_Logo.png" alt="" width="80" height="80">
-			<h2>Name Here</h2>
+			<h2>Name Here (#)</h2>
 			<h3>Email Here</h3>
 		</div>
 	</div>
@@ -32,13 +32,12 @@
 	            Post Title
 	            <?php if($answered)
 	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
-	                if(!$isOpen)
+	                if(true)
 	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
 	            ?>
 	            <br/>
 	        </div>
 	    </h3>
-	   	<p class="lead">by First Last</p>
 	    <p><span class="glyphicon glyphicon-time"></span> date</p>
 	    <hr>
 	</div>
@@ -49,13 +48,12 @@
 	            Post Title
 	            <?php if($answered)
 	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
-	                if(!$isOpen)
+	                if(true)
 	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
 	            ?>
 	            <br/>
 	        </div>
 	    </h3>
-	   	<p class="lead">by First Last</p>
 	    <p><span class="glyphicon glyphicon-time"></span> date</p>
 	    <hr>
 	</div>
@@ -66,13 +64,12 @@
 	            Post Title
 	            <?php if($answered)
 	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
-	                if(!$isOpen)
+	                if(true)
 	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';
 	            ?>
 	            <br/>
 	        </div>
 	    </h3>
-	   	<p class="lead">by First Last</p>
 	    <p><span class="glyphicon glyphicon-time"></span> date</p>
 	    <hr>
 	</div>
