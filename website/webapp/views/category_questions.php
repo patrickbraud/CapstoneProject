@@ -1,13 +1,16 @@
 <?php
     $page = new Page("Category Here", $SessionPerson);
+
 	$page->getModule("blogPost");
-    $page->showHeader();
+    $page->getModule("pagination");
+	$page->getModule("categories");
 
-	$pagen = $page->getQuery("number");
-	if(!isset($pagen)) $pagen = 1;
+	$page->showHeader();
 
-	$itemsPerPage = 10;
-	$offset = ($pagen * $itemsPerPage) - $itemsPerPage;
+	$number = $page->getQuery("number");
+	if(!isset($number)) $number = 1;
+
+	$offset = calcOffset($number);
 
     if(!is_null($page->getQuery("id"))) {
 		$id = $page->getQuery("id");
@@ -31,7 +34,7 @@
 		<div class="container col-md-6">
 
 		<?php
-			$posts = $BlogPosts->getAllFromCategoryId($id, $itemsPerPage, $offset);
+			$posts = $BlogPosts->getAllFromCategoryId($id, ITEMS_PER_PAGE, $offset);
 			$count = count($posts);
 			if($count > 0) {
 				foreach ($posts as $b) {
@@ -41,15 +44,7 @@
 					if($opened || $page->isAdmin($Role))
 						blogPost($b["id"], $b["title"], $user["first_name"], $user["last_name"], $b["date_posted"], $ans, $opened);
 				}
-				if($count >= $itemsPerPage) {
-					$p =  $page->getURL() . "?". $page->getQueryString();
-					?>
-					<ul class="pager">
-						<li class="previous"><a href="<?php echo $p .  "&number=" .($pagen-1) ?>">&larr; Newer</a></li>
-						<li class="next"><a href="<?php echo $p .  "&number=" .($pagen +1) ?>">Older &rarr;</a></li>
-					</ul>
-					<?php
-				}
+				pagination($number, $count, $page);
 			} else {
 		?>
 			<div class="panel panel-default">
@@ -66,7 +61,6 @@
 		</div>
 
 		<?php
-		$page->getModule("categories");
 		listCategories($Categories);
 
 

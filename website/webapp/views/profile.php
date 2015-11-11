@@ -4,11 +4,6 @@
 	$page->getModule("categories");
 	$page->getModule("blogPost");
     $page->showHeader();
-
-    if($page->isAdmin($Role)) {
-       echo "<a href=".$page->link("home", "admin").">Admin Panel</a>";
-    }
-
 ?>
 
     
@@ -16,8 +11,8 @@
 		<div class="panel-body text-center">
 			<!-- <h2><?php echo $page->getTitle(); ?></h2> -->
 			<img src="Tech_Logo.png" alt="" width="80" height="80">
-			<h2>Name Here (#)</h2>
-			<h3>Email Here</h3>
+			<h2>James Little</h2>
+			<h2>james.little@ttu.edu | 1010</h2>
 		</div>
 	</div>
 
@@ -30,7 +25,7 @@
 	    <h3>
 	       	<div>
 	            Post Title
-	            <?php if($answered)
+	            <?php if(true)
 	                	echo '<span class="glyphicon glyphicon-ok" style="color:green"></span>';
 	                if(true)
 	                  	echo '<span class="glyphicon glyphicon-remove" style="color:red"></span>';

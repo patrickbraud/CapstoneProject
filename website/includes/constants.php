@@ -4,6 +4,7 @@ define("PROJECT_NAME", "CS Web Blog");
 define("PROJECT_DESC", "Something something, give us an A.");
 define("PROJECT_AUTHORS", "James Little, Jason Webb, Patrick Braud, and Randall Harper.");
 define("PAGE_FOOTER", "Copyright &copy; ".PROJECT_NAME." 2015");
+define("ITEMS_PER_PAGE", 10);
 
 /* POINTS */
 define("STARTING_POINTS", 100);
