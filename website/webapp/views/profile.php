@@ -36,6 +36,7 @@
 			$email = $SessionPerson->email();
 		}
 
+<<<<<<< Updated upstream
 		$page->showHeader();
 		?>
 
@@ -53,6 +54,16 @@
 
 				<h3><?php echo $email; ?></h3>
 			</div>
+=======
+    
+  	<div class="container col-md-8">
+		<div class="panel-body text-center">
+			<img src="Tech_Logo.png" alt="" width="80" height="80">
+			<br /><a href="#">Change Profile Picture?</a>
+			<h2><?php echo $firstName." ".$lastName; ?> : <?php echo $points; ?> </h2>
+			<h3><?php echo $email; ?></h3>
+			<br/>
+>>>>>>> Stashed changes
 		</div>
 
 		<?php
