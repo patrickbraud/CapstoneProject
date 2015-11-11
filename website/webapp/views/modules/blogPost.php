@@ -11,7 +11,8 @@
                 <br/>
             </div>
         </h4>
-        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast; ?></a></p>
+        <?php $ua = new UserAvatar($userId); ?>
+        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast." ".$ua->getImage(15, 15); ?></a></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>
@@ -35,7 +36,8 @@
         <h5>
             <a href="?page=category_questions&id=<?php echo $categoryId; ?>"><?php echo $categoryName; ?></a>
         </h5>
-        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast; ?></a></p>
+        <?php $ua = new UserAvatar($userId); ?>
+        <p>by <a href="?page=profile&id=<?php echo $userId; ?>"><?php echo $userFirst." ".$userLast." ".$ua->getImage(15, 15); ?></a></p>
 
         <p><span class="glyphicon glyphicon-time"></span> <?php echo $date; ?></p>
         <hr>
