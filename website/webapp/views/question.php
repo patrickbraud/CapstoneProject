@@ -29,6 +29,7 @@
     <div class="container col-md-12">
         <div class="panel-body text-center">
             <h3><?php echo $post["title"]; ?></h3>
+            <br/>
         </div>
     </div>
 
