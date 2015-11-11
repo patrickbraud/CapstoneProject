@@ -10,6 +10,12 @@
 	$firstName = "";
 	$lastName = "";
 
+	$number = $page->getQuery("number");
+	if(!isset($number)) $number = 1;
+
+	$offset = calcOffset($number);
+
+
 	if(!is_null($id)) { //Look up user
 		$u = $Users->get($id);
 		$firstName = $u["first_name"];
@@ -43,12 +49,28 @@
 
 <div class="container col-md-8">
 	<?php
-		foreach($BlogPosts->getAllForUser($id) as $b) {
-			$categoryName = $Categories->get($b["category"])["name"];
-			$ans = $b["correctAnswerId"] > 0;
-			$opened = $b["marked"] == 0;
-			if($opened || $page->isAdmin($Role))
-				blogPostWithCategory($b["id"], $b["title"], $firstName, $lastName, $b["date_posted"], $b["category"], $categoryName, $ans, $opened);
+		$posts = $BlogPosts->getAllForUser($id, ITEMS_PER_PAGE, $offset);
+		$count = count($posts);
+		if($count > 0) {
+			foreach ($posts as $b) {
+				$categoryName = $Categories->get($b["category"])["name"];
+				$ans = $b["correctAnswerId"] > 0;
+				$opened = $b["marked"] == 0;
+				if ($opened || $page->isAdmin($Role))
+					blogPostWithCategory($b["id"], $b["title"], $firstName, $lastName, $b["date_posted"], $b["category"], $categoryName, $ans, $opened);
+			}
+			pagination($number, $count, $page);
+		} else {
+		?>
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+					<div class="row">
+						<p>No Posts.</p>
+					</div>
+				</div>
+			</div>
+		<?php
+
 		}
 	?>
 </div>
