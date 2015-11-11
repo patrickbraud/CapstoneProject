@@ -47,13 +47,20 @@
 			<div class="panel-body text-center">
 				<?php
 					$ua = new UserAvatar($id);
+<<<<<<< HEAD
 					echo $ua->getImage(120, 120);
+=======
+					echo $ua->getImage(80, 80);
+				
+					if($id == $SessionPerson->id()) {
+>>>>>>> origin/master
 				?>
-				<br/>
-				<form action="?page=profile&sent=true"method="post" enctype="multipart/form-data">
-					<input type="file" name="avatar" id="avatar" value="Upload Avatar" />
-					<input type="submit" name="submit" id="submit" value="Upload" />
-				</form>
+					<br/>
+					<form action="?page=profile&sent=true"method="post" enctype="multipart/form-data">
+						<input type="file" name="avatar" id="avatar" value="Upload Avatar" />
+						<input type="submit" name="submit" id="submit" value="Upload" />
+					</form>
+				<?php } ?>
 
 				<h2><?php echo $firstName . " " . $lastName; ?> : <?php echo $points; ?> </h2>
 
