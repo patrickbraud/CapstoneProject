@@ -6,7 +6,7 @@
     $page->showHeader();
     echo "<h1>".$page->getTitle()."</h1>";
     $page->getModule("categories");
-    listCategories($Categories);
+    listCategories($Categories, $SessionPerson->role());
     $page->showFooter();
 
 ?>

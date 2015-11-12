@@ -11,7 +11,7 @@
 
 	} else if(!is_null($page->getQuery("add"))) {
 		if(isset($_POST["submit"])) {
-			$Categories->add($_POST["name"]);
+			$Categories->add($_POST["name"], $_POST["view"], $_POST["comment"], $_POST["post"]);
 			$Session->add("cate_msg", "Category Added.");
 			$page->removeQuery("add");
 			$page->redirect();
@@ -29,6 +29,42 @@
 
 				<div class="col-md-4">
 					<input type="name" class="form-control" name="name" id="name" value="" aria-describedby="basic-addon2">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-offset-2 col-md-2" for="name">Post Permission:</label>
+
+				<div class="col-md-4">
+					<select id="post" name="post">
+						<option value="<?php echo USER_ROLE; ?>">User</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-offset-2 col-md-2" for="name">View Permission:</label>
+
+				<div class="col-md-4">
+					<select id="view" name="view">
+						<option value="<?php echo USER_ROLE; ?>">User</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-offset-2 col-md-2" for="name">Comment Permission:</label>
+
+				<div class="col-md-4">
+					<select id="comment" name="comment">
+						<option value="<?php echo USER_ROLE; ?>">User</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
+					</select>
 				</div>
 			</div>
 

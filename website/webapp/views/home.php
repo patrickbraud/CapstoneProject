@@ -19,7 +19,7 @@
 	</div>
 
 	<?php
-    	listCategories($Categories);
+    	listCategories($Categories, $SessionPerson->role());
 	?>
 
 	<div class="container col-md-6">

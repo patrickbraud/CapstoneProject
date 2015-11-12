@@ -23,7 +23,7 @@ if(isset($_POST["search_submit"])) {
             <?php echo "<h2>$title</h2>"; ?>
         </div>
     </div>
-    <?php ListCategories($Categories); ?>
+    <?php ListCategories($Categories, $SessionPerson->id()); ?>
     <div class="container col-md-6">
     <?php
     if (!$emptyString) {

@@ -67,7 +67,7 @@ if(isset($_POST["submit"]) && $page->getQuery("sent")) {
 	</div>
 
 	<?php
-	listCategories($Categories);
+	listCategories($Categories, $SessionPerson->role());
 	?>
 
 	<div class="container col-md-8">

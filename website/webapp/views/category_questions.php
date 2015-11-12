@@ -12,9 +12,10 @@
 
 	$offset = calcOffset($number);
 
-    if(!is_null($page->getQuery("id"))) {
+    if(!is_null($page->getQuery("id")) && $Categories->allowedToView($page->getQuery("id"), $SessionPerson->role())) {
 		$id = $page->getQuery("id");
 		$c = $Categories->get($id);
+
 
 		?>
 
@@ -25,7 +26,7 @@
 		</div>
 
 		<div class="container col-md-12" style="margin-bottom: 10px;">
-			<?php  if($page->isAuth()) { ?>
+			<?php  if($page->isAuth() && $c["post"] <= $SessionPerson->role()) { ?>
 				<button type="button button" class="btn btn-default pull-right">
 					<a href="?page=new_post&id=<?php echo $c["id"]; ?>">Add Post<a/>
 				</button>
@@ -61,7 +62,7 @@
 		</div>
 
 		<?php
-		listCategories($Categories);
+		listCategories($Categories, $SessionPerson->role());
 
 
 		$page->showFooter();

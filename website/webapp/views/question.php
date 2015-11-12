@@ -34,7 +34,7 @@
     </div>
 
 
-    <?php listCategories($Categories); ?>
+    <?php listCategories($Categories, $SessionPerson->role()); ?>
         <div class = "container col-md-8">
             <?php if($page->isAdmin($Role)) {
                 if($post["marked"] == 0) { ?>
@@ -91,7 +91,7 @@
         <?php
                 }
             }
-            if(!$hasAnswer && $SessionPerson->isAuth()) {
+            if(!$hasAnswer && $SessionPerson->isAuth() && $Categories->allowedToComment($post["category"], $SessionPerson->role())) {
         ?>
             <form action="<?php echo $page->currentURL(); ?>" method="post" class="col-md-8">
 

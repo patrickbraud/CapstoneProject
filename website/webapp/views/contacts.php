@@ -1,7 +1,8 @@
 <?php
 	$page = new Page("Contacts", $SessionPerson);
 	$page->showHeader();
-  $page->getModule("categories");
+    $page->getModule("categories");
+
 ?>
 
 <div class="container col-md-8">
@@ -40,7 +41,7 @@
 <br/>
 <br/>
 <br/>
-<?php listCategories($Categories); ?>
+<?php listCategories($Categories, $SessionPerson->role()); ?>
 
 <?php
 	$page->showFooter();
