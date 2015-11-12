@@ -128,7 +128,7 @@
 
 				<div class="form-group">
 					<h2>Categories</h2>
-					<button type="add_category" class="btn btn-default">
+					<button type="button" class="btn btn-default">
 						<a href="<?php echo $page->currentURL() . "&add=true" ?>">Add Category</a>
 					</button>
 				</div>
