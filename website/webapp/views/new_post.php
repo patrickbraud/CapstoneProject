@@ -22,12 +22,8 @@
 		if($People->getPoints($userId) >= QUESTION_POINTS) {
 			?>
 
-			<div class="container col-md-12">
-				<div class="panel panel-default col-md-offset-1 col-md-10">
-					<div class="panel-body text-center">
-						<h2><?php echo $c["name"]; ?></h2>
-					</div>
-				</div>
+			<div class="container col-md-12 text-center col-md-offset-1 col-md-10">
+				<h2><?php echo $c["name"]; ?></h2>
 			</div>
 			<form action="<?php echo $page->currentURL(); ?>" method="post">
 				<div class="container col-md-offset-1 col-md-12">
