@@ -2,6 +2,12 @@
 	$page = new Page("Edit Categories Page", $SessionPerson);
 	$page->requireAdmin($Role);
 
+
+	function isSelected($value, $checkAgainst) {
+		if($value == $checkAgainst) return "selected";
+		else return "";
+	}
+
 	if(!is_null($page->getQuery("delete"))) {
 		$id = $page->getQuery("delete");
 		$Categories->remove($id);
@@ -9,7 +15,7 @@
 		$page->removeQuery("delete");
 		$page->redirect();
 
-	} else if(!is_null($page->getQuery("add"))) {
+	} else if(!is_null($page->getQuery("add"))) { //Add a Category
 		if(isset($_POST["submit"])) {
 			$Categories->add($_POST["name"], $_POST["view"], $_POST["comment"], $_POST["post"]);
 			$Session->add("cate_msg", "Category Added.");
@@ -21,8 +27,6 @@
 	?>
 		<form class="form-horizontal" role="form" method="post" action="<?php echo $page->currentURL(); ?>">
 
-			<div class="form-group">
-			</div>
 
 			<div class="form-group">
 				<label class="control-label col-md-offset-2 col-md-2" for="name">Category Name:</label>
@@ -38,7 +42,7 @@
 				<div class="col-md-4">
 					<select id="post" name="post">
 						<option value="<?php echo USER_ROLE; ?>">User</option>
-						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Faculty</option>
 						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
 					</select>
 				</div>
@@ -50,7 +54,7 @@
 				<div class="col-md-4">
 					<select id="view" name="view">
 						<option value="<?php echo USER_ROLE; ?>">User</option>
-						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Faculty</option>
 						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
 					</select>
 				</div>
@@ -62,7 +66,7 @@
 				<div class="col-md-4">
 					<select id="comment" name="comment">
 						<option value="<?php echo USER_ROLE; ?>">User</option>
-						<option value="<?php echo STAFF_ROLE; ?>">Staff</option>
+						<option value="<?php echo STAFF_ROLE; ?>">Faculty</option>
 						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
 					</select>
 				</div>
@@ -79,10 +83,10 @@
 		</form>
 	<?php
 
-	} else if (!is_null($page->getQuery("id"))) {
+	} else if (!is_null($page->getQuery("id"))) { //Update a Category
 			$id = $page->getQuery("id");
 			if (isset($_POST["submit"])) {
-				$Categories->update($id, $_POST["name"]);
+				$Categories->update($id, $_POST["name"], $_POST["view"], $_POST["comment"], $_POST["post"]);
 				$Session->add("cate_msg", "Updated Category");
 				$page->removeQuery("id");
 				$page->redirect();
@@ -104,6 +108,42 @@
 					</div>
 				</div>
 
+				<div class="form-group">
+					<label class="control-label col-md-offset-2 col-md-2" for="name">Post Permission:</label>
+
+					<div class="col-md-4">
+						<select id="post" name="post">
+							<option value="<?php echo USER_ROLE; ?>" <?php echo isSelected(USER_ROLE, $c["post"]); ?>>User</option>
+							<option value="<?php echo STAFF_ROLE; ?>" <?php echo isSelected(STAFF_ROLE, $c["post"]); ?>>Faculty</option>
+							<option value="<?php echo ADMIN_ROLE; ?>" <?php echo isSelected(ADMIN_ROLE, $c["post"]); ?>>Admin</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-offset-2 col-md-2" for="name">View Permission:</label>
+
+					<div class="col-md-4">
+						<select id="view" name="view">
+							<option value="<?php echo USER_ROLE; ?>" <?php echo isSelected(USER_ROLE, $c["view"]); ?>>User</option>
+							<option value="<?php echo STAFF_ROLE; ?>" <?php echo isSelected(STAFF_ROLE, $c["view"]); ?>>Faculty</option>
+							<option value="<?php echo ADMIN_ROLE; ?>" <?php echo isSelected(ADMIN_ROLE, $c["view"]); ?>>Admin</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-md-offset-2 col-md-2" for="name">Comment Permission:</label>
+
+					<div class="col-md-4">
+						<select id="comment" name="comment">
+							<option value="<?php echo USER_ROLE; ?>" <?php echo isSelected(USER_ROLE, $c["comment"]); ?>>User</option>
+							<option value="<?php echo STAFF_ROLE; ?>" <?php echo isSelected(STAFF_ROLE, $c["comment"]); ?>>Faculty</option>
+							<option value="<?php echo ADMIN_ROLE; ?>" <?php echo isSelected(ADMIN_ROLE, $c["comment"]); ?>>Admin</option>
+						</select>
+					</div>
+				</div>
+
 
 				<div class="form-group">
 					<div class="col-md-offset-4">
@@ -117,7 +157,7 @@
 			<?php
 		} else {
 			$page->showHeader();
-			if (!is_null($Session->get("cate_msg"))) {
+			if (!is_null($Session->get("cate_msg"))) { //Default Page.
 				echo $Session->get("cate_msg");
 			}
 			echo '<a href="' . $page->link("home", "admin") . '">Admin Home</a>';
