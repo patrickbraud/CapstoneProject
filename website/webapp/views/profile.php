@@ -63,9 +63,16 @@ if(isset($_POST["submit"]) && $page->getQuery("sent")) {
 			<h2><?php echo $firstName . " " . $lastName; ?> : <?php echo $points; ?> </h2>
 
 			<h3><?php echo $email; ?></h3>
+			<br/>
 		</div>
 	</div>
 
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 	<?php
 	listCategories($Categories, $SessionPerson->role());
 	?>
