@@ -98,9 +98,6 @@
 			<form class="form-horizontal" role="form" method="post" action="<?php echo $page->currentURL(); ?>">
 
 				<div class="form-group">
-				</div>
-
-				<div class="form-group">
 					<label class="control-label col-md-offset-2 col-md-2" for="name">Category Name:</label>
 
 					<div class="col-md-4">
