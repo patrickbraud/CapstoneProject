@@ -7,8 +7,8 @@
 		exit;
 	}
 
-	function printError($error) {
-		if(isset($error) && $error != NULL) echo $error;
+	function printError($error, Session $session) {
+		if(isset($session->get("errors")[$error])) echo $session->get("errors")[$error];
 		else echo "";
 	}
 
@@ -41,7 +41,7 @@
 				<label class="control-label col-md-offset-2 col-md-2" for="name">First name:</label>
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" value="<?php echo $Session->get("values")["first_name"]; ?>">
-					<div><?php  printError($Session->get("errors")["first_name"]); ?></div>
+					<div><?php printError("first_name", $Session); ?></div>
 				</div>
 			</div>
 
@@ -50,7 +50,7 @@
 
 				<div class="col-md-4">
 					<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" value="<?php echo $Session->get("values")["last_name"]; ?>">
-					<div><?php echo $Session->get("errors")["last_name"]; ?></div>
+					<div><?php printError("last_name", $Session); ?></div>
 				</div>
 			</div>
 
@@ -60,7 +60,7 @@
 				<div class="col-md-4">
 					<input type="email" class="form-control" id="email" placeholder="Enter TTU email" name="email" value="<?php echo $Session->get("values")["email"]; ?>">
 					<span class="input-group-addon">@ttu.edu emails only</span>
-					<div><?php echo $Session->get("errors")["email"]; ?></div>
+					<div><?php printError("email", $Session);  ?></div>
 				</div>
 			</div>
 
@@ -70,7 +70,7 @@
 				<div class="col-md-4">
 					<input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
 					<span class="input-group-addon">We recommend not using your eRaider password</span>
-					<div><?php echo $Session->get("errors")["password"]; ?></div>
+					<div><?php printError("password", $Session);  ?></div>
 				</div>
 			</div>
 
