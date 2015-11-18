@@ -148,12 +148,12 @@ class People {
             $errors["email"] = "Email is invalid."; //Email is not valid..
         }
         //First Name Checking..
-        $values["first_name"] = strtolower($first_name);
+        $values["first_name"] = ucfirst(strtolower($first_name));
         if(!$this->validName($first_name)){
             $errors["first_name"] = "First Name is not a valid name.";
         }
         //Last Name Checking..
-        $values["last_name"] = strtolower($last_name);
+        $values["last_name"] = ucfirst(strtolower($last_name));
         if(!$this->validName($last_name)){
             $errors["last_name"] = "Last Name is not a valid name.";
         }
