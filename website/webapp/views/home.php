@@ -14,7 +14,8 @@
   	<div class="container col-md-12">
 		<div class="panel-body text-center">
 			<!--<h2><?php echo $page->getTitle(); ?></h2>-->
-			<img src="Home_Logo.png" alt="">
+
+			<img src="<?php echo $page->getAsset("images/Home_Logo.png"); ?>" alt="home">
 		</div>
 	</div>
 
