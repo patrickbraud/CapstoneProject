@@ -155,34 +155,44 @@
 		} else {
 			$page->showHeader();
 			if (!is_null($Session->get("cate_msg"))) { //Default Page.
-				echo $Session->get("cate_msg");
+				echo $Session->get("cate_msg") ."<br />";
 			}
 			echo '<a href="' . $page->link("home", "admin") . '">Admin Home</a>';
 			?>
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-				</div>
 
-				<div class="form-group">
-					<h2>Categories</h2>
-					<button type="button" class="btn btn-default">
-						<a href="<?php echo $page->currentURL() . "&add=true" ?>">Add Category</a>
-					</button>
-				</div>
-			</form>
 
-			<div class="list-group">
-				<?php
-				foreach ($Categories->getAll() as $c) {
-					?>
-					<button type="button" class="list-group-item">
-						<a href="<?php echo $page->link("categories", "admin") . "&id=" . $c["id"]; ?>"><?php echo $c["name"]; ?></a>
-						[<a href="<?php echo $page->link("categories", "admin") . "&delete=" . $c["id"]; ?>">Delete</a>]
-					</button>
-					<?php
-				}
-				?>
+		<form classs="form-horizontal" role="form">
+
+			<div class="form-group">
+				<div class="col-md-4">
+
+					<div class="container">
+						<table class="table table-bordered">
+							<thead>
+							<tr>
+								<th>Delete</th>
+								<th>Name</th>
+								<th>Post Permission</th>
+								<th>View Permission</th>
+								<th>Comment Permission</th>
+							</tr>
+							</thead>
+							<tbody>
+							<?php foreach ($Categories->getAll() as $c) { ?>
+								<tr>
+									<td><a href="<?php echo $page->link("categories", "admin") . "&delete=" . $c["id"]; ?>">Delete</a></td>
+									<td><a href="<?php echo $page->link("categories", "admin") . "&id=" . $c["id"]; ?>"><?php echo $c["name"]; ?></a></td>
+									<td><?php echo $Role->getRoleName($c["post"]); ?></td>
+									<td><?php echo $Role->getRoleName($c["view"]); ?></td>
+									<td><?php echo $Role->getRoleName($c["comment"]); ?></td>
+								</tr>
+							<?php } ?>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
+		</form>
 
 			<?php
 	}

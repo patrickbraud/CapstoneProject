@@ -74,7 +74,8 @@
 	<?php
 	} else {
 		$page->showHeader();
-		if (!is_null($Session->get("users_msg"))) echo $Session->get("users_msg");
+		if (!is_null($Session->get("users_msg"))) echo $Session->get("users_msg")."<br />";
+		echo '<a href="' . $page->link("home", "admin") . '">Admin Home</a>';
 		?>
 
 		<form classs="form-horizontal" role="form">
