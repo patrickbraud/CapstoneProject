@@ -52,8 +52,7 @@
                         $ua = new UserAvatar($user["id"]);
                         echo $ua->getImage(30, 30) . " "; ?>
                         <a href="?page=profile&id=<?php echo $user["id"]; ?>" style="color: rgb(255,255,255)">
-                            <?php 
-                            echo $user["first_name"]." ".$user["last_name"];?>
+                            <?php echo $user["first_name"]." ".$user["last_name"];?>
                         </a>
                     </div>
                     <div class="col-sm-6 text-right"><?php echo $post["date_posted"]; ?></div>
