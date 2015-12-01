@@ -46,7 +46,8 @@ class Role extends DAO {
         $s = "";
         if($this->isAdmin($roleId)) $s =  "Admin";
         else if($this->isStaff($roleId)) $s = "Faculty";
-        else $s = "User";
+        else if($this->isUser($roleId)) $s = "User";
+        else $s = "Guest";
         return $s;
     }
 

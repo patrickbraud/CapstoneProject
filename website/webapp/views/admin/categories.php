@@ -53,6 +53,7 @@
 
 				<div class="col-md-4">
 					<select id="view" name="view">
+						<option value="<?php echo GUEST_ROLE; ?>">Guest</option>
 						<option value="<?php echo USER_ROLE; ?>">User</option>
 						<option value="<?php echo STAFF_ROLE; ?>">Faculty</option>
 						<option value="<?php echo ADMIN_ROLE; ?>">Admin</option>
@@ -122,6 +123,7 @@
 
 					<div class="col-md-4">
 						<select id="view" name="view">
+							<option value="<?php echo GUEST_ROLE; ?>" <?php echo isSelected(GUEST_ROLE, $c["view"]); ?>>Guest</option>
 							<option value="<?php echo USER_ROLE; ?>" <?php echo isSelected(USER_ROLE, $c["view"]); ?>>User</option>
 							<option value="<?php echo STAFF_ROLE; ?>" <?php echo isSelected(STAFF_ROLE, $c["view"]); ?>>Faculty</option>
 							<option value="<?php echo ADMIN_ROLE; ?>" <?php echo isSelected(ADMIN_ROLE, $c["view"]); ?>>Admin</option>

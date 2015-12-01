@@ -34,6 +34,7 @@ define("TBL_ANSWERS", "answers");
 define("TBL_ROLES", "roles");
 
 /* ROLES */
+define("GUEST_ROLE", -1);
 define("USER_ROLE", 0);
 define("STAFF_ROLE", 1);
 define("ADMIN_ROLE", 2);

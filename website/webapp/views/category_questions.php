@@ -67,6 +67,6 @@
 
 		$page->showFooter();
 	} else {
-		echo "error..";
+		echo "You do not have permissions to view this page.";
 	}
 ?>

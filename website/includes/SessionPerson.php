@@ -4,6 +4,9 @@ class SessionPerson extends Person {
     public function __construct($db, $session){
         parent::__construct($db);
         $this->session = $session;
+        $this->guest();
+
+
     }
     public function login($email, $password){
         if(parent::login($email, $password)){
@@ -17,6 +20,11 @@ class SessionPerson extends Person {
             return true;
         }else
             return false;
+    }
+    public function guest() {
+        if (is_null($this->getVariable("LOGIN-isAuth"))) {
+            $this->addVariable("LOGIN-roleId", parent::role());
+        }
     }
     public function logout(){
         $this->removeVariable("LOGIN-isAuth");
